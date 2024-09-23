@@ -159,99 +159,34 @@ EJERCICIO 11.4
 Un método estático en Java pertenece a la clase en lugar de a una instancia específica, permitiendo que se llame sin crear un objeto de la clase. Se utilizan para operaciones comunes o utilitarias que no dependen del estado de un objeto particular, y se accede a ellos directamente mediante el nombre de la clase.
 
 EJERCICIO 12
-import java.util.ArrayList;
-// Definición de la clase principal
-public class Main {
-    public static class Habitante {
-        private String nombre;
-        private String apellido1;
-        private String apellido2;
 
-        public Habitante(String nombre, String apellido1, String apellido2) {
-            this.nombre = nombre;
-            this.apellido1 = apellido1;
-            this.apellido2 = apellido2;
-        }
-        // Constructor por omisión
-        public Habitante() {
-            this.nombre = "Desconocido";
-            this.apellido1 = "Desconocido";
-            this.apellido2 = "Desconocido";
-        }
-        // Metodo getter que devuelve el nombre completo
-        public String getNombreCompleto() {
-            return nombre + " " + apellido1 + " " + apellido2;
-        }
+public class Habitante {
+    // Declaramos las variables del habitante
+    private String nombre, apellido1, apellido2;
+
+    // Constructor con parámetros para inicializar los atributos
+    public Habitante(String nombre, String apellido1, String apellido2) {
+        this.nombre = nombre;
+        this.apellido1 = apellido1;
+        this.apellido2 = apellido2;
     }
-    // Realizamos la comprobación
-    static class Comprobacion {
+
+    // Metodo que devuelve el nombre completo del habitante
+    public String getNombreCompleto() {
+        return nombre + " " + apellido1 + " " + apellido2; // Concatenación los datos del habitante
+    }
+
+    public static class Comprobacion {
+        // Metodo que realiza la comprobacion
         public static void realizarComprobacion() {
-            // Creamos un habitante de ejemplo
+            // Crea un nuevo objeto Habitante con los valores dados
             Habitante habitante1 = new Habitante("Miguel", "Gonzalo", "Vázquez");
-            // Mostramos el nombre completo del nuevo usuario
-            System.out.println(habitante1.getNombreCompleto());
+            // Imprime el nombre completo del habitante
+            System.out.println("El nombre es: " + habitante1.getNombreCompleto());
         }
     }
-    // Ejecutamos el programa
+    // Inicializamos el programa
     public static void main(String[] args) {
         Comprobacion.realizarComprobacion();
-    }
-}
-
-EJERCICIO 13
-import java.util.ArrayList;
-public class Main {
-// Declaramos las variables
-    public static class Habitante {
-        private String nombre;
-        private String apellido1;
-        private String apellido2;
-        // Constructor para inicializar los atributos
-        public Habitante(String nombre, String apellido1, String apellido2) {
-            this.nombre = nombre;
-            this.apellido1 = apellido1;
-            this.apellido2 = apellido2;
-        }
-        // Metodo getter que devuelve el nombre completo
-        public String getNombreCompleto() {
-            return nombre + " " + apellido1 + " " + apellido2;
-        }
-    }
-    static class OficinaPadron {
-        // Definimos un ArrayList para almacenar los habitantes
-        private ArrayList<Habitante> habitantesPadron = new ArrayList<>();
-
-        // Añadimos habitantes al padrón
-        public void annadir(Habitante habitante) {
-            habitantesPadron.add(habitante);
-        }
-        // Obtenemos la lista de habitantes
-        public ArrayList<Habitante> getHabitantesPadron() {
-            return habitantesPadron;
-        }
-
-        // Calculamos el número total de habitantes
-        public int calcularNumeroHabitantes() {
-            return habitantesPadron.size();
-        }
-    }
-    public static void realizarComprobacion() {
-        // Creamos dos objetos Habitante
-        Habitante habitante1 = new Habitante("Miguel", "Gonzalo", "Vázquez");
-        Habitante habitante2 = new Habitante("Pablo", "Molina", "García");
-
-        OficinaPadron padron = new OficinaPadron();
-        padron.annadir(habitante1);
-        padron.annadir(habitante2);
-
-        // Obtener la lista de habitantes y mostrarlos por pantalla
-        for (Habitante habitante : padron.getHabitantesPadron()) {
-            System.out.println(habitante.getNombreCompleto());
-        }
-        System.out.println("El número total de habitantes es " + padron.calcularNumeroHabitantes());
-    }
-    // Ejecutamos el programa tras realizar la comprobación
-    public static void main(String[] args) {
-        realizarComprobacion();
     }
 }
