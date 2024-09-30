@@ -1,0 +1,56 @@
+EJERCICIO 13
+import java.util.ArrayList;
+public class Main {
+    // Declaramos las variables
+    public static class Habitante {
+        private String nombre;
+        private String apellido1;
+        private String apellido2;
+        // Constructor para inicializar los atributos
+        public Habitante(String nombre, String apellido1, String apellido2) {
+            this.nombre = nombre;
+            this.apellido1 = apellido1;
+            this.apellido2 = apellido2;
+        }
+        // Metodo getter que devuelve el nombre completo
+        public String getNombreCompleto() {
+            return nombre + " " + apellido1 + " " + apellido2;
+        }
+    }
+    static class OficinaPadron {
+        // Definimos un ArrayList para almacenar los habitantes
+        private ArrayList<Habitante> habitantesPadron = new ArrayList<>();
+
+        // Añadimos habitantes al padrón
+        public void annadir(Habitante habitante) {
+            habitantesPadron.add(habitante);
+        }
+        // Obtenemos la lista de habitantes
+        public ArrayList<Habitante> getHabitantesPadron() {
+            return habitantesPadron;
+        }
+
+        // Calculamos el número total de habitantes
+        public int calcularNumeroHabitantes() {
+            return habitantesPadron.size();
+        }
+    }
+    public static void realizarComprobacion() {
+        // Creamos dos objetos Habitante
+        Habitante habitante1 = new Habitante("Miguel", "Gonzalo", "Vázquez");
+        Habitante habitante2 = new Habitante("Pablo", "Molina", "García");
+
+        OficinaPadron padron = new OficinaPadron();
+        padron.annadir(habitante1);
+        padron.annadir(habitante2);
+
+        // Obtener la lista de habitantes y mostrarlos por pantalla
+        for (Habitante habitante : padron.getHabitantesPadron()) {
+            System.out.println(habitante.getNombreCompleto());
+        }
+        System.out.println("El número total de habitantes es " + padron.calcularNumeroHabitantes());
+    }
+    // Ejecutamos el programa tras realizar la comprobación
+    public static void main(String[] args) {
+        realizarComprobacion();
+    }
