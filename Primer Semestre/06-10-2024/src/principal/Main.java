@@ -3,6 +3,6 @@ import comprobaciones.Comprobacion; // Importamos la clase Comprobacion desde el
 public class Main {
     // Metodo principal que ejecuta el programa
     public static void main(String[] args) {
-        Comprobacion.realizarComprobacion(); // Llamamos al método para realizar la comprobación
+        Comprobacion.realizarComprobacion(); // Llamamos al metodo para realizar la comprobación
     }
 }
