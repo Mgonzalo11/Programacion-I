@@ -116,15 +116,19 @@ public class Menu {
                 return;
             }
 
-            System.out.print("Ingrese nuevo Nombre: ");
+            // Obtener el software existente
+            Software softwareExistente = catalogo.buscarSoftwarePorId(id);
+
+            // Preguntar al usuario si quiere modificar cada atributo
+            System.out.print("Ingrese nuevo Nombre (actual: " + softwareExistente.getNombre() + "): ");
             String nombre = scanner.nextLine();
-            System.out.print("Ingrese nuevo Tipo de IA: ");
+            System.out.print("Ingrese nuevo Tipo de IA (actual: " + softwareExistente.getTipoIA() + "): ");
             String tipoIA = scanner.nextLine();
-            System.out.print("Ingrese nuevo Lenguaje: ");
+            System.out.print("Ingrese nuevo Lenguaje (actual: " + softwareExistente.getLenguaje() + "): ");
             String lenguaje = scanner.nextLine();
-            System.out.print("Ingrese nuevo Uso Principal: ");
+            System.out.print("Ingrese nuevo Uso Principal (actual: " + softwareExistente.getUsoPrincipal() + "): ");
             String usoPrincipal = scanner.nextLine();
-            System.out.print("Ingrese nuevo Precio (mayor que 0): ");
+            System.out.print("Ingrese nuevo Precio (actual: " + softwareExistente.getPrecio() + "): ");
             double precio = scanner.nextDouble();
 
             // Validar que el precio sea positivo y mayor que 0
@@ -133,6 +137,7 @@ public class Menu {
                 return;
             }
 
+            // Modificar software
             Software nuevoSoftware = new Software(id, nombre, tipoIA, lenguaje, usoPrincipal, precio);
             boolean modificado = gestionCatalogo.modificarSoftware(id, nuevoSoftware);
             if (modificado) {

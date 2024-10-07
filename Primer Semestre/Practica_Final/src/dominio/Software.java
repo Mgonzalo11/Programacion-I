@@ -1,8 +1,5 @@
 package dominio;
 
-/**
- * Clase que representa un software de inteligencia artificial.
- */
 public class Software {
     private int id;
     private String nombre;
@@ -21,7 +18,7 @@ public class Software {
         this.precio = precio;
     }
 
-    // Métodos de acceso (getters y setters)
+    // Métodos de acceso
     public int getId() {
         return id;
     }
@@ -30,20 +27,40 @@ public class Software {
         return nombre;
     }
 
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
     public String getTipoIA() {
         return tipoIA;
+    }
+
+    public void setTipoIA(String tipoIA) {
+        this.tipoIA = tipoIA;
     }
 
     public String getLenguaje() {
         return lenguaje;
     }
 
+    public void setLenguaje(String lenguaje) {
+        this.lenguaje = lenguaje;
+    }
+
     public String getUsoPrincipal() {
         return usoPrincipal;
     }
 
+    public void setUsoPrincipal(String usoPrincipal) {
+        this.usoPrincipal = usoPrincipal;
+    }
+
     public double getPrecio() {
         return precio;
+    }
+
+    public void setPrecio(double precio) {
+        this.precio = precio;
     }
 
     @Override

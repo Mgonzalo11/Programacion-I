@@ -55,11 +55,17 @@ public class GestionCatalogo {
     }
 
     public boolean modificarSoftware(int id, Software nuevoSoftware) {
-        // Lógica para modificar software en el catálogo
-        // Si se encuentra y se modifica
-        guardarCatalogo(); // Guarda el catálogo después de modificar
-        return true; // Cambiar según la lógica real
+        // Suponiendo que el catálogo tiene un método para buscar por ID
+        Software softwareExistente = catalogo.buscarSoftwarePorId(id);
+        if (softwareExistente != null) {
+            // Aquí podrías aplicar la lógica para reemplazar los atributos, o si decides reemplazar el objeto:
+            catalogo.getListaSoftware().remove(softwareExistente); // Elimina el viejo
+            catalogo.getListaSoftware().add(nuevoSoftware); // Añade el nuevo
+            return true;
+        }
+        return false; // No se encontró el software
     }
+
 
     public boolean eliminarSoftware(int id) {
         // Lógica para eliminar software del catálogo

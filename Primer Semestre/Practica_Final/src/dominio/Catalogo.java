@@ -49,10 +49,18 @@ public class Catalogo {
      * @return true si se modificó el software, false si no se encontró.
      */
     public boolean modificarSoftware(int id, Software nuevoSoftware) {
-        if (eliminarSoftware(id)) { // Elimina el software existente
-            añadirSoftware(nuevoSoftware); // Añade el nuevo software
+        Software softwareExistente = buscarSoftwarePorId(id); // Busca el software existente
+        if (softwareExistente != null) {
+            // Actualiza los atributos del software existente
+            softwareExistente.setNombre(nuevoSoftware.getNombre());
+            softwareExistente.setTipoIA(nuevoSoftware.getTipoIA());
+            softwareExistente.setLenguaje(nuevoSoftware.getLenguaje());
+            softwareExistente.setUsoPrincipal(nuevoSoftware.getUsoPrincipal());
+            softwareExistente.setPrecio(nuevoSoftware.getPrecio());
+            System.out.println("Software modificado: " + softwareExistente.getNombre());
             return true; // Se modificó correctamente
         }
+        System.out.println("Software con ID " + id + " no encontrado.");
         return false; // No se encontró el software
     }
 
@@ -84,6 +92,7 @@ public class Catalogo {
             }
         }
     }
+
     public boolean esIdUnico(int id) {
         for (Software software : listaSoftware) {
             if (software.getId() == id) {
@@ -92,6 +101,7 @@ public class Catalogo {
         }
         return true; // ID único
     }
+
     public boolean existeSoftware(int id) {
         for (Software software : listaSoftware) {
             if (software.getId() == id) {
