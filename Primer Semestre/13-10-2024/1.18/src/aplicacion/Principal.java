@@ -1,13 +1,17 @@
-package aplicacion;
-import presentacion.*;
-
+package aplicacion; // Paquete principal de la aplicación que contiene la clase Principal
+import presentacion.*; // Importa las clases necesarias del paquete presentacion, en este caso, InterfazUsuario.
 public class Principal {
+    // Metodo principal que se ejecuta cuando se inicia el programa
     public static void main(String[] args) {
-        // Se pasa el primer argumento de 'args' a la función ejecutar
+        // Verifica si se ha proporcionado al menos un argumento en la línea de comandos
         if (args.length > 0) {
-            InterfazUsuario.ejecutar(args[0]); // Pasa el primer argumento
+            // Si se proporciona un argumento, ejecuta la instrucción correspondiente utilizando el primer argumento
+            // El argumento debe ser "mostrar" o "añadir" según la implementación
+            InterfazUsuario.ejecutar(args[0]); // Llama al metodo ejecutar de la clase InterfazUsuario pasando el primer argumento
         } else {
-            System.out.println("No se proporcionó ninguna instrucción.");
+            // Si no se proporciona ningún argumento, muestra un mensaje de error indicando que falta la instrucción
+            System.out.println("No se proporcionó ninguna instrucción."); // Mensaje de error
         }
     }
 }
+
