@@ -23,7 +23,7 @@ Este repositorio es un portafolio que muestra mis trabajos y proyectos realizado
 
 ## 💻 Mis Habilidades
 
-[![My Skills](https://skillicons.dev/icons?i=java,kotlin,nodejs,figma&theme=light)](https://skillicons.dev)
+[![My Skills](https://skillicons.dev/icons?i=java,git,github,idea&theme=light)](https://skillicons.dev)
 
 ---
 
