@@ -1,60 +1,48 @@
-<h1 align="center">🖥️ Proyecto de Programación - Ingeniería de Sistemas de la Información</h1>
+<img align="right" src="https://visitor-badge.laobi.icu/badge?page_id=Mgonzalo11.Mgonzalo11" />
+<a href="https://git.io/typing-svg" align="center">
+    <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=800&size=30&pause=2000&color=00A0E5&width=435&lines=I'm+Miguel+Gonzalo+V%C3%A1zquez+;I'm+a+Computer+Engineering+Student" alt="Typing SVG" />
+</a>
+<h3 align="center" style="color: #555;">"La innovación es lo que distingue a un líder de un seguidor." - Steve Jobs.</h3>
+<br/>
+<div align="center">
+    <p>
+        🔭 Actualmente estoy estudiando en el <strong>CEU San Pablo</strong> <strong>Ingeniería Informática de Sistemas de la Información</strong>.
+    </p>
+    <p>
+        🌱 Estoy aprendiendo <strong>JAVA, Lógica, Git y GitHub</strong>.
+    </p>
+    <p>
+        💬 Pregúntame sobre <strong>programación, sistemas operativos, bases de datos, ciberseguridad...</strong> o cualquier cosa <a href="https://github.com/Mgonzalo11/Programacion-I/issues">aquí</a>.
+    </p>
+</div>
+<div align="center" style="margin-top: 20px; display: flex; justify-content: center; gap: 20px;">
+    <a href="mailto:miguelgonzalovazquez04@gmail.com">
+        <img src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Gmail" />
+    </a>
+    <a href="https://www.linkedin.com/in/miguel-gonzalo-vazquez/" target="_blank">
+        <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" />
+    </a>
+    <a href="https://wuolah.com/miguelgonzalovazquez" target="_blank">
+        <img src="https://img.shields.io/badge/Wuolah-FF5722?style=for-the-badge&logo=todoist&logoColor=white" alt="Wuolah" />
+    </a>
+</div>
+<hr/>
+<h2 align="center" style="color: #4CAF50;">⚒️ Lenguajes, Frameworks y Herramientas ⚒️</h2>
+<br/>
+<div align="center">
+    <img src="https://skillicons.dev/icons?i=html,css,javascript,java,python,mysql,git,github,idea,vscode,notion" />
+</div>
+<br/>
+<hr/>
+<h2 align="center" style="color: #4CAF50;">⚡ Estadísticas ⚡</h2>
+<br>
+<div align="center" style="max-width: 800px; margin: 0 auto;">
+    <a href="https://git.io/streak-stats">
+        <img src="https://streak-stats.demolab.com?user=Mgonzalo11&theme=windows-dark" alt="GitHub Streak" style="border-radius: 10px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);">
+    </a>
+    <br/><br/>
+    <img width="390" src="https://github-readme-stats.vercel.app/api?username=Mgonzalo11&count_private=true&show_icons=true&theme=react&rank_icon=github&border_radius=10" alt="readme stats" style="border-radius: 10px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);"/>
+    <br/><br/>
+    <img width="325" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Mgonzalo11&hide=HTML&langs_count=8&layout=compact&theme=react&border_radius=10&size_weight=0.5&count_weight=0.5&exclude_repo=github-readme-stats" alt="top langs" style="border-radius: 10px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);"/>
+</div>
 
-<p align="center">
-  <img src="https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=java&logoColor=white">
-  <img src="https://img.shields.io/badge/GitHub-%23121011.svg?style=for-the-badge&logo=github&logoColor=white">
-  <img src="https://img.shields.io/badge/License-Apache_2.0-blue.svg?style=for-the-badge">
-</p>
-
-<p align="center">
-  Bienvenido a mi repositorio de <strong>Programación</strong> del primer año de Ingeniería de Sistemas de la Información. Aquí encontrarás el código y los proyectos que he desarrollado durante el curso. Este repositorio está orientado a los conceptos fundamentales de programación, buenas prácticas y el uso de algoritmos.
-</p>
-
----
-
-## 📋 Índice
-
-- [Descripción](#📝-descripción)
-- [Instalación](#🛠️-instalación)
-- [Uso](#🚀-uso)
-- [Estructura del Proyecto](#📂-estructura-del-proyecto)
-- [Tecnologías Utilizadas](#💻-tecnologías-utilizadas)
-- [Contribuciones](#🤝-contribuciones)
-- [Licencia](#📜-licencia)
-
-## 📝 Descripción
-
-Este proyecto incluye diferentes ejercicios y proyectos que abarcan los temas clave de programación, desde la lógica básica hasta la implementación de algoritmos avanzados. Es una parte esencial del aprendizaje de **Sistemas de Información** y está diseñado para desarrollar habilidades de resolución de problemas y pensamiento crítico.
-
-## 🛠️ Instalación
-
-1. Clona el repositorio:
-   ```bash
-   git clone https://github.com/Mgonzalo11/Programacion-I
-## 💻 Tecnologías Utilizadas
-
-<p align="center">
-  <img src="https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=java&logoColor=white">
-  <img src="https://img.shields.io/badge/GitHub-%23121011.svg?style=for-the-badge&logo=github&logoColor=white">
-  <img src="https://img.shields.io/badge/JDK-17%2B-green?style=for-the-badge&logo=java&logoColor=white">
-</p>
-
-- **Lenguaje**: Java  
-- **Sistema de Control de Versiones**: Git y GitHub  
-- **Compilador**: JDK 17 o superior
-
----
-
-## 🤝 Contribuciones
-
-¡Las contribuciones son **bienvenidas**! Si deseas mejorar el código, corregir errores o añadir nuevas funcionalidades, no dudes en abrir un **pull request**.
-
----
-
-## 📜 Licencia
-
-Este proyecto está licenciado bajo la **Licencia Apache 2.0**. Consulta el archivo [LICENSE](LICENSE) para más detalles.
-
----
-
-<p align="center">🌟 ¡Gracias por visitar! 🌟</p>
