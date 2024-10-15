@@ -58,7 +58,7 @@ Si tienes alguna pregunta o sugerencia, no dudes en contactar conmigo:
 
 - **Email:** [miguelgonzalovazquez04@gmail.com](mailto:miguelgonzalovazquez04@gmail.com)
 - **GitHub:** [https://github.com/Mgonzalo11](https://github.com/Mgonzalo11)
-- **LinkedIn:** [Tu Perfil LinkedIn](#)
+- **LinkedIn:** [https://www.linkedin.com/in/miguel-gonzalo-vazquez/](https://www.linkedin.com/in/miguel-gonzalo-vazquez/)
 
 ---
 
