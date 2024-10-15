@@ -30,7 +30,7 @@ Este proyecto incluye diferentes ejercicios y proyectos que abarcan los temas cl
 
 1. Clona el repositorio:
    ```bash
-   git clone https://github.com/usuario/programacion-sistemas.git
+   git clone https://github.com/Mgonzalo11/Programacion-I
 ## 💻 Tecnologías Utilizadas
 
 <p align="center">
