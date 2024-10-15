@@ -1,4 +1,5 @@
 # 🌟 Sistema de Gestión de Habitantes del Padrón
+
 ---
 
 ## 📖 Descripción
@@ -25,23 +26,42 @@ Esta aplicación es ideal para oficinas municipales, registros civiles o cualqui
 1. **Clona el repositorio:**
    ```bash
    git clone https://github.com/tuusuario/nombre-del-repositorio.git
+
 ---
-📂 Estructura del Código
+## 📂 Estructura del Código
+
 El proyecto está organizado en tres paquetes principales:
-aplicacion: Contiene la clase Principal, el punto de entrada de la aplicación.
-dominio: Incluye las clases Habitante y OficinaPadron, que gestionan los datos de los habitantes.
-presentacion: Contiene la clase InterfazUsuario, que maneja la interacción con el usuario.
+
+- **aplicacion:** Contiene la clase `Principal`, el punto de entrada de la aplicación.
+- **dominio:** Incluye las clases `Habitante` y `OficinaPadron`, que gestionan los datos de los habitantes.
+- **presentacion:** Contiene la clase `InterfazUsuario`, que maneja la interacción con el usuario.
+
 ---
-🤝 Contribuciones
-With the colaboration of mi friend CHATGPT FREE (andamos pobres)
+
+## 📚 Diagrama UML
+
+A continuación se muestra el diagrama UML que representa la arquitectura de la aplicación:
+
+![Diagrama UML](https://github.com/Mgonzalo11/Programacion-I/blob/main/Primer%20Semestre/13-10-2024/Padron_By_Paloma/DiagramaUML.png)
+
 ---
-📞 Contacto
+
+## 🤝 Contribuciones
+
+Con la colaboración de mi amigo **ChatGPT Free** (¡andamos pobres!).
+
+---
+
+## 📞 Contacto
+
 Si tienes alguna pregunta o sugerencia, no dudes en contactar conmigo:
 
-Email: miguelgonzalovazquez04@gmail.com
-GitHub: https://github.com/Mgonzalo11
-LinkedIn
----
-📝 Licencia
-Este proyecto está bajo la Licencia Apache 2.0. Puedes utilizar, modificar y distribuir el código bajo los términos de esta licencia. Para más detalles, consulta el archivo LICENSE que se encuentra en la raíz del repositorio.
+- **Email:** [miguelgonzalovazquez04@gmail.com](mailto:miguelgonzalovazquez04@gmail.com)
+- **GitHub:** [https://github.com/Mgonzalo11](https://github.com/Mgonzalo11)
+- **LinkedIn:** [Tu Perfil LinkedIn](#)
 
+---
+
+## 📝 Licencia
+
+Este proyecto está bajo la **Licencia Apache 2.0**. Puedes utilizar, modificar y distribuir el código bajo los términos de esta licencia. Para más detalles, consulta el archivo `LICENSE` que se encuentra en la raíz del repositorio.
