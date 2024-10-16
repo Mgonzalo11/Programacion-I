@@ -3,9 +3,7 @@ package dominio;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Clase para gestionar un catálogo de software.
- */
+// Clase para gestionar un catálogo de software.
 public class Catalogo {
     private List<Software> listaSoftware; // Lista que almacena los objetos Software
 
@@ -14,22 +12,13 @@ public class Catalogo {
         this.listaSoftware = new ArrayList<>(); // Inicializa la lista de software
     }
 
-    /**
-     * Método para añadir software al catálogo.
-     *
-     * @param software objeto Software que se desea añadir.
-     */
+    // Metodo para añadir software al catálogo.
     public void añadirSoftware(Software software) {
         listaSoftware.add(software); // Añade el software a la lista
         System.out.println("Software añadido: " + software.getNombre());
     }
 
-    /**
-     * Método para eliminar software del catálogo por ID.
-     *
-     * @param id ID del software que se desea eliminar.
-     * @return true si se eliminó el software, false si no se encontró.
-     */
+    // Metodo para eliminar software del catálogo por ID.
     public boolean eliminarSoftware(int id) {
         Software softwareAEliminar = buscarSoftwarePorId(id);
         if (softwareAEliminar != null) {
@@ -41,13 +30,7 @@ public class Catalogo {
         return false; // No se encontró el software
     }
 
-    /**
-     * Método para modificar software en el catálogo.
-     *
-     * @param id ID del software que se desea modificar.
-     * @param nuevoSoftware objeto Software con los nuevos datos.
-     * @return true si se modificó el software, false si no se encontró.
-     */
+    // Metodo para modificar software en el catálogo.
     public boolean modificarSoftware(int id, Software nuevoSoftware) {
         Software softwareExistente = buscarSoftwarePorId(id); // Busca el software existente
         if (softwareExistente != null) {
@@ -64,12 +47,7 @@ public class Catalogo {
         return false; // No se encontró el software
     }
 
-    /**
-     * Método para buscar un software por su ID.
-     *
-     * @param id ID del software que se desea buscar.
-     * @return el objeto Software si se encuentra, null si no se encuentra.
-     */
+    // Metodo para buscar un software por su ID.
     public Software buscarSoftwarePorId(int id) {
         for (Software software : listaSoftware) {
             if (software.getId() == id) {
@@ -79,43 +57,43 @@ public class Catalogo {
         return null; // Retorna null si no se encuentra
     }
 
-    /**
-     * Método para listar todos los software en el catálogo.
-     */
+    // Metodo para listar todos los software en el catálogo
     public void listarSoftware() {
         if (listaSoftware.isEmpty()) {
             System.out.println("No hay software en el catálogo.");
         } else {
             System.out.println("Lista de Software:");
             for (Software software : listaSoftware) {
-                System.out.println(software); // Utiliza el método toString de Software
+                System.out.println(software);
             }
         }
     }
 
+    // Metodo que verifica si un ID es único en la lista de software.
     public boolean esIdUnico(int id) {
+        // Itera sobre la lista de software
         for (Software software : listaSoftware) {
+            // Si el ID del software coincide con el ID proporcionado, retorna false
             if (software.getId() == id) {
-                return false; // ID ya existe
+                return false; // El ID ya existe en el catálogo
             }
         }
-        return true; // ID único
+        return true; // Si no se encuentra el ID, significa que es único
     }
 
+    // Metodo que comprueba si un software con el ID dado existe en el catálogo.
     public boolean existeSoftware(int id) {
+        // Itera sobre la lista de software
         for (Software software : listaSoftware) {
+            // Si encuentra un software con el ID proporcionado, retorna true
             if (software.getId() == id) {
-                return true; // El software existe
+                return true; // El software con el ID especificado existe
             }
         }
-        return false; // El software no existe
+        return false; // Si no se encuentra el software con ese ID, retorna false
     }
 
-    /**
-     * Método para obtener la lista de software.
-     *
-     * @return la lista de objetos Software.
-     */
+    // Metodo para obtener la lista de software.
     public List<Software> getListaSoftware() {
         return listaSoftware; // Retorna la lista de software
     }

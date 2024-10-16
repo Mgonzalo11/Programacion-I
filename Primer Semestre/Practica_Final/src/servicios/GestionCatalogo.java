@@ -1,26 +1,31 @@
 package servicios;
-
+// Declaraciones de importación
+import persistencia.ArchivoCatalogo;
 import dominio.Catalogo;
 import dominio.Software;
-
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.List;
 
+// Clase para gestionar el catálogo de software
 public class GestionCatalogo {
     private Catalogo catalogo;
     private String rutaArchivo;
 
+    // Constructor que inicializa el catálogo y la ruta del archivo
     public GestionCatalogo(Catalogo catalogo, String rutaArchivo) {
         this.catalogo = catalogo;
         this.rutaArchivo = rutaArchivo;
     }
 
+    // Metodo para cargar el catálogo desde el archivo
     public void cargarCatalogo() {
-        // Implementa la carga del catálogo desde el archivo
+        ArchivoCatalogo archivoCatalogo = new ArchivoCatalogo(rutaArchivo);
+        archivoCatalogo.cargarDesdeArchivo(catalogo);
     }
 
+    // Metodo para guardar el catálogo
     public void guardarCatalogo() {
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(rutaArchivo))) {
             // Escribe el encabezado
@@ -36,7 +41,7 @@ public class GestionCatalogo {
                         software.getLenguaje() + "," +
                         software.getUsoPrincipal() + "," +
                         software.getPrecio());
-                writer.newLine(); // Nueva línea para cada software
+                writer.newLine();
             }
             System.out.println("Catálogo guardado exitosamente.");
         } catch (IOException e) {
@@ -44,33 +49,40 @@ public class GestionCatalogo {
         }
     }
 
-    // Otros métodos para añadir, modificar y eliminar software
+    // Metodo para añadir software
     public boolean añadirSoftware(Software software) {
-        // Añade el software al catálogo
+        if (catalogo.buscarSoftwarePorId(software.getId()) != null) {
+            System.out.println("El software con ID " + software.getId() + " ya existe.");
+            return false; // Evita duplicados
+        }
         boolean added = catalogo.getListaSoftware().add(software);
         if (added) {
-            guardarCatalogo(); // Guarda el catálogo después de añadir
+            guardarCatalogo();
         }
         return added;
     }
 
+    // Metodo para modificar software
     public boolean modificarSoftware(int id, Software nuevoSoftware) {
-        // Suponiendo que el catálogo tiene un método para buscar por ID
         Software softwareExistente = catalogo.buscarSoftwarePorId(id);
         if (softwareExistente != null) {
-            // Aquí podrías aplicar la lógica para reemplazar los atributos, o si decides reemplazar el objeto:
             catalogo.getListaSoftware().remove(softwareExistente); // Elimina el viejo
             catalogo.getListaSoftware().add(nuevoSoftware); // Añade el nuevo
+            guardarCatalogo(); // Guarda cambios
             return true;
         }
-        return false; // No se encontró el software
+        return false;
     }
 
-
+    // Metodo para eliminar software
     public boolean eliminarSoftware(int id) {
-        // Lógica para eliminar software del catálogo
-        // Si se encuentra y se elimina
-        guardarCatalogo(); // Guarda el catálogo después de eliminar
-        return true; // Cambiar según la lógica real
+        Software softwareExistente = catalogo.buscarSoftwarePorId(id);
+        if (softwareExistente != null) {
+            catalogo.getListaSoftware().remove(softwareExistente);
+            guardarCatalogo();
+            return true;
+        }
+        System.out.println("No se encontró el software con ID " + id);
+        return false;
     }
 }
