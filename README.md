@@ -1,20 +1,17 @@
-<<<<<<< HEAD
-=======
 # 🌟 Programación I
->>>>>>> 8625aebab555102730327cd0a5a0f85b1c4ea852
 
-¡Bienvenido a mi repositorio de **Programación I**! Aquí encontrarás mis proyectos académicos y personales, donde he tenido la oportunidad de aplicar mis conocimientos en programación y explorar nuevas tecnologías.
+¡Bienvenido a mi repositorio de **Programación I**! Aquí encontrarás una colección de mis proyectos académicos y personales, donde he aplicado mis conocimientos en programación y explorado nuevas tecnologías.
 
 ## ✨ Descripción
 
-Este repositorio es un portafolio que muestra mis trabajos y proyectos realizados durante la asignatura de Programación I. Mi objetivo es compartir mis aprendizajes y recibir feedback tanto de mis compañeros como de la profesora de la asignatura.
+Este repositorio es un portafolio que muestra mis trabajos y proyectos realizados durante la asignatura de Programación I. Mi objetivo es compartir mis aprendizajes y recibir retroalimentación de mis compañeros y profesores.
 
 *"La programación es el arte de controlar lo que una computadora hace."* - *Marijn Haverbeke*
 
-## 🚀 Proyectos
+## 🚀 Proyectos Destacados
 
-- **Padron Habitantes**: Una aplicación que permite gestionar un padrón de habitantes, facilitando el acceso, la edición y la eliminacion de datos de los habitantes.
-- **Gestor de Catálogo de Productos o Servicios**: Un sistema para gestionar, organizar, administrar y mantener un inventario de software utilizado dentro de una organización.
+- **Padrón de Habitantes**: Una aplicación que permite gestionar un padrón de habitantes, facilitando el acceso, la edición y la eliminación de datos de los habitantes.
+- **Gestor de Catálogo de Productos o Servicios**: Un sistema diseñado para gestionar, organizar y mantener un inventario de productos o servicios utilizados en una organización.
 
 ## 💻 Tecnologías Utilizadas
 
@@ -34,4 +31,5 @@ Si tienes alguna pregunta o sugerencia, no dudes en contactarme:
 
 *"Programar es como escribir un libro... excepto que si olvidas una coma al final de una línea, el libro no funciona."* - *Anónimo*
 
-¡Espero que encuentres útil este README! 
+¡Espero que encuentres útil este README!
+
