@@ -6,8 +6,6 @@
 
 Este repositorio es un portafolio que muestra mis trabajos y proyectos realizados durante la asignatura de Programación I. Mi objetivo es compartir mis aprendizajes y recibir retroalimentación de mis compañeros y profesores.
 
-*"La programación es el arte de controlar lo que una computadora hace."* - *Marijn Haverbeke*
-
 ## 🚀 Proyectos Destacados
 
 - **Padrón de Habitantes**: Una aplicación que permite gestionar un padrón de habitantes, facilitando el acceso, la edición y la eliminación de datos de los habitantes.
@@ -30,6 +28,4 @@ Si tienes alguna pregunta o sugerencia, no dudes en contactarme:
 - **LinkedIn**: [Miguel Gonzalo Vázquez](https://www.linkedin.com/in/miguel-gonzalo-vazquez/)
 
 *"Programar es como escribir un libro... excepto que si olvidas una coma al final de una línea, el libro no funciona."* - *Anónimo*
-
-¡Espero que encuentres útil este README!
 
