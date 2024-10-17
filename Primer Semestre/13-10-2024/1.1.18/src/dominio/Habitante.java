@@ -17,11 +17,11 @@ public class Habitante {
         return apellido1; // Devuelve el primer apellido del habitante.
     }
     // Metodo getter para obtener el valor del atributo 'apellido2'.
-    public String getApellido2() {
-        return apellido2; // Devuelve el segundo apellido del habitante.
+    public String getApellido2() { return apellido2; // Devuelve el segundo apellido del habitante.
     }
     // Metodo que devuelve el nombre completo del habitante, concatenando nombre y apellidos.
     public String getNombreCompleto() {
         return nombre + " " + apellido1 + " " + apellido2; // Devuelve el nombre completo en formato "Nombre Apellido1 Apellido2".
+
     }
 }
