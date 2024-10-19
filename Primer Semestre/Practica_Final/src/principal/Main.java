@@ -8,7 +8,7 @@ public class Main {
     public static void main(String[] args) {
         Catalogo catalogo = new Catalogo(); // Crea el catálogo
         // Definición de la Ruta del Archivo
-        String rutaArchivo = "C:\\Users\\TESTER\\Desktop\\GitHub Repositorios\\Programacion-I\\Primer Semestre\\Practica_Final\\doc.csv"; // Asegúrate de especificar el archivo correcto
+        String rutaArchivo = "Primer Semestre/Practica_Final/doc.csv"; // Asegúrate de especificar el archivo correcto
 
         // Crea la instancia de GestionCatalogo
         GestionCatalogo GestionCatalogo = new GestionCatalogo(catalogo, rutaArchivo);
@@ -20,3 +20,4 @@ public class Main {
     }
 }
 
+// Esto es un comentario
