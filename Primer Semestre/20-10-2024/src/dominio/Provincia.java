@@ -22,7 +22,6 @@ public class Provincia {
         return totalHabitantes; // Devuelve el total
     }
     // Metodo toString para representar la provincia como una cadena
-    @Override
     public String toString() {
         return "Provincia: " + nombre + ", Municipios: " + municipios;
     }

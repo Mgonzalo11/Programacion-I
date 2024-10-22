@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="d7d41bb0-8847-4251-8732-3c2dec828326" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/27-10-2024.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../20-10-2024/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../20-10-2024/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../20-10-2024/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../20-10-2024/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../20-10-2024/src/aplicacion/Principal.java" beforeDir="false" afterPath="$PROJECT_DIR$/../20-10-2024/src/aplicacion/Principal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../20-10-2024/src/dominio/Localidad.java" beforeDir="false" afterPath="$PROJECT_DIR$/../20-10-2024/src/dominio/Localidad.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../20-10-2024/src/dominio/Municipio.java" beforeDir="false" afterPath="$PROJECT_DIR$/../20-10-2024/src/dominio/Municipio.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../20-10-2024/src/dominio/Provincia.java" beforeDir="false" afterPath="$PROJECT_DIR$/../20-10-2024/src/dominio/Provincia.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/1.5.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/aplicacion/GestorDatos.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/aplicacion/Principal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/aplicacion/Principal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dominio/Localidad.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dominio/Localidad.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dominio/Municipio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dominio/Municipio.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dominio/Provincia.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dominio/Provincia.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 4
+}</component>
+  <component name="ProjectId" id="2nmq5CjcHfS6OPJpgo9nDSf7E2m" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.Principal.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/MiguelPC/Desktop/MiguelGonzalo/GitHub/Programacion-I/Primer Semestre/27-10-2024",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RunManager">
+    <configuration name="Principal" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="aplicacion.Principal" />
+      <module name="27-10-2024" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="aplicacion.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Principal" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-28b599e66164-intellij.indexing.shared.core-IU-242.23339.11" />
+        <option value="bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-IU-242.23339.11" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="d7d41bb0-8847-4251-8732-3c2dec828326" name="Changes" comment="" />
+      <created>1729588413944</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1729588413944</updated>
+      <workItem from="1729588415000" duration="159000" />
+      <workItem from="1729588584821" duration="626000" />
+      <workItem from="1729589249100" duration="854000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

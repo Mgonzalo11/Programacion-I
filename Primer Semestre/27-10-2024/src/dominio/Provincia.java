@@ -1,45 +1,46 @@
 package dominio;
-
 import java.util.ArrayList;
-import java.util.List;
-
-public class Provincia {
-    private String nombre; // Atributo para almacenar el nombre de la provincia
-    private List<Municipio> municipios; // Lista que almacena los municipios que pertenecen a la provincia
-
-    // Constructor que inicializa el nombre de la provincia y la lista de municipios
-    public Provincia(String nombre) {
-        this.nombre = nombre;
-        this.municipios = new ArrayList<>(); // Inicializa la lista de municipios vacía
+import java.io.Serializable;
+public class Provincia implements Serializable {
+    private String nombre;
+    private ArrayList<Municipio> municipios;
+    public Provincia(String nombre_) {
+        nombre = nombre_;
+        municipios = new ArrayList<Municipio>();
     }
-
-    // Método getter para obtener el nombre de la provincia
+    public Provincia add(Municipio municipio) {
+        municipios.add(municipio);
+        return this;
+    }
     public String getNombre() {
         return nombre;
     }
-
-    // Método para añadir un municipio a la provincia
-    public void addMunicipio(Municipio municipio) {
-        municipios.add(municipio); // Añade el municipio a la lista
-    }
-
-    // Método para contar el número total de habitantes de la provincia
-    public int contarHabitantes() {
-        int totalHabitantes = 0; // Variable que acumula el número total de habitantes
+    public int getPoblacion() {
+        int poblacion = 0;
         for (Municipio municipio : municipios) {
-            totalHabitantes += municipio.contarHabitantes(); // Suma los habitantes de cada municipio
+            poblacion += municipio.getPoblacion();
         }
-        return totalHabitantes; // Devuelve el total
+        return poblacion;
     }
-
-    // Método getter para obtener la lista de municipios
-    public List<Municipio> getMunicipios() {
+    public ArrayList<Municipio> getMunicipios() {
         return municipios;
     }
-
-    // Método toString para representar la provincia como una cadena
-    @Override
+    public Municipio getMunicipio(int i) {
+        return municipios.get(i);
+    }
     public String toString() {
-        return "Provincia: " + nombre + ", Municipios: " + municipios;
+        StringBuilder sb = new StringBuilder();
+        sb.append("Provincia: ").append(nombre)
+                .append(" Población: ").append(getPoblacion())
+                .append(" habitantes\n");
+        // Añadir información sobre los municipios
+        sb.append("Municipios:\n");
+        for (Municipio municipio : municipios) {
+            sb.append(municipio.toString()); // Llama al toString de Municipio
+        }
+        return sb.toString(); // Devuelve el contenido del StringBuilder como String
+    }
+    public int size() {
+        return municipios.size();
     }
 }

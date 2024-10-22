@@ -1,9 +1,12 @@
 package aplicacion;
-
+import presentacion.Interfaz;
 public class Principal {
     public static void main(String[] args) {
-        // Crear una instancia de GestorDatos y comenzar la gestión de provincias, municipios y localidades
-        GestorDatos gestor = new GestorDatos();
-        gestor.iniciar();
+        Interfaz interfaz=new Interfaz();
+        String [] peticion;
+        interfaz.ayuda();// para que muestre la ayuda al principio
+        do {
+            peticion=interfaz.leerPeticion();
+        } while (interfaz.procesarPeticion(peticion));
     }
 }

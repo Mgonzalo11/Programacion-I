@@ -1,38 +1,31 @@
 package dominio;
-
-public class Localidad {
-    private String nombre; // Atributo para almacenar el nombre de la localidad
-    private int numeroDeHabitantes; // Atributo para almacenar el número de habitantes de la localidad
-
-    // Constructor que inicializa los atributos de la localidad
-    public Localidad(String nombre, int numeroDeHabitantes) {
-        this.nombre = nombre;
-        this.numeroDeHabitantes = numeroDeHabitantes;
+import java.io.Serializable;
+public class Localidad implements Serializable {
+    private String nombre;
+    private int poblacion;
+    public Localidad(String nombre_, int poblacion_) {
+        nombre = nombre_;
+        poblacion = poblacion_;
     }
-
-    // Método getter para obtener el nombre de la localidad
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("Localidad: ").append(nombre)
+                .append(" Población: ").append(poblacion)
+                .append(" habitantes\n");
+        return sb.toString(); // Devuelve el contenido del StringBuilder como String
+    }
+    public int getPoblacion() {
+        return poblacion;
+    }
     public String getNombre() {
         return nombre;
     }
-
-    // Método setter para establecer el nombre de la localidad
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public Localidad setNombre(String nombre) {
+        this.nombre = nombre; // Asegúrate de usar 'this' para referirse al atributo de la clase
+        return this;
     }
-
-    // Método getter para obtener el número de habitantes de la localidad
-    public int getNumeroDeHabitantes() {
-        return numeroDeHabitantes;
-    }
-
-    // Método setter para establecer el número de habitantes de la localidad
-    public void setNumeroDeHabitantes(int numeroDeHabitantes) {
-        this.numeroDeHabitantes = numeroDeHabitantes;
-    }
-
-    // Método toString para representar la localidad como una cadena
-    @Override
-    public String toString() {
-        return "Localidad: " + nombre + ", Habitantes: " + numeroDeHabitantes;
+    public Localidad setPoblacion(int poblacion) {
+        this.poblacion = poblacion; // Asegúrate de usar 'this' para referirse al atributo de la clase
+        return this;
     }
 }

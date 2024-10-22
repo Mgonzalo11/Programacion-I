@@ -22,7 +22,6 @@ public class Municipio {
         return totalHabitantes; // Devuelve el total
     }
     // Metodo toString para representar el municipio como una cadena
-    @Override
     public String toString() {
         return "Municipio: " + nombre + ", Localidades: " + localidades;
     }

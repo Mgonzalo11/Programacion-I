@@ -24,9 +24,7 @@ public class Localidad {
         this.numeroDeHabitantes = numeroDeHabitantes;
     }
     // Metodo toString para representar la localidad como una cadena
-    @Override
     public String toString() {
         return "Localidad: " + nombre + ", Habitantes: " + numeroDeHabitantes;
     }
 }
-

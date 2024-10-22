@@ -1,46 +1,44 @@
 package dominio;
-
 import java.util.ArrayList;
-import java.util.List;
-
-public class Municipio {
-    private String nombre; // Atributo para almacenar el nombre del municipio
-    private List<Localidad> localidades; // Lista que almacena las localidades que pertenecen al municipio
-
-    // Constructor que inicializa el nombre del municipio y la lista de localidades
-    public Municipio(String nombre) {
-        this.nombre = nombre;
-        this.localidades = new ArrayList<>(); // Inicializa la lista de localidades vacía
+import java.io.Serializable;
+public class Municipio implements Serializable {
+    private String nombre;
+    private ArrayList<Localidad> localidades;
+    public Municipio(String nombre_) {
+        nombre = nombre_;
+        localidades = new ArrayList<Localidad>();
     }
+    public Municipio add(Localidad localidad) {
+        localidades.add(localidad);
+        return this;
+    }
+    public int getPoblacion() {
+        int poblacion = 0;
+        for (Localidad localidad : localidades) {
+            poblacion += localidad.getPoblacion();
+        }
+        return poblacion;
+    }
+    public int getLocalidades() {
+        return localidades.size();
+    }
+    public Localidad getLocalidad(int i) {
+        return localidades.get(i);
+    }
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("Municipio: ").append(nombre)
+                .append(" Población: ").append(getPoblacion())
+                .append(" habitantes\n");
 
-    // Método getter para obtener el nombre del municipio
+        // Agrega las localidades al StringBuilder
+        sb.append("Localidades:\n");
+        for (Localidad localidad : localidades) {
+            sb.append(localidad.toString()); // Llama al toString de Localidad
+        }
+        return sb.toString(); // Devuelve el contenido del StringBuilder como String
+    }
     public String getNombre() {
         return nombre;
     }
-
-    // Método para añadir una localidad al municipio
-    public void addLocalidad(Localidad localidad) {
-        localidades.add(localidad); // Añade la localidad a la lista
-    }
-
-    // Método para contar el número total de habitantes del municipio
-    public int contarHabitantes() {
-        int totalHabitantes = 0; // Variable que acumula el número total de habitantes
-        for (Localidad localidad : localidades) {
-            totalHabitantes += localidad.getNumeroDeHabitantes(); // Suma los habitantes de cada localidad
-        }
-        return totalHabitantes; // Devuelve el total
-    }
-
-    // Método getter para obtener la lista de localidades
-    public List<Localidad> getLocalidades() {
-        return localidades;
-    }
-
-    // Método toString para representar el municipio como una cadena
-    @Override
-    public String toString() {
-        return "Municipio: " + nombre + ", Localidades: " + localidades;
-    }
 }
-
