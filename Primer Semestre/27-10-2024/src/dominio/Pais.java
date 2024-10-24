@@ -1,5 +1,5 @@
 package dominio;
-import java.io.Serializable;
+import java.io.*;
 import java.util.ArrayList;
 public class Pais implements Serializable {
     private String nombre;
@@ -11,8 +11,14 @@ public class Pais implements Serializable {
         Pais pais = new Pais();
         return pais;
     }
-    public void grabar() {
-        System.out.println("Guardando el país: " + nombre);
+    public void grabar(){
+        try {
+            ObjectOutputStream fo=new ObjectOutputStream (new FileOutputStream("pais.ser"));
+            fo.writeObject(this);
+            fo.close();
+        } catch (Exception e){
+            System.out.println("error de escritura");
+        }
     }
     public void add(Provincia provincia) {
         provincias.add(provincia);
