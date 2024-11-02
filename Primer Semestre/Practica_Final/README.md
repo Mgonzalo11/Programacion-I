@@ -42,9 +42,9 @@ El proyecto está organizado en los siguientes paquetes:
 
 ## 📊 Diagrama UML
 
-A continuación se presenta el diagrama UML del sistema:
+A continuación se presenta el diagrama UML del proyecto, que ilustra la estructura y las relaciones entre las clases:
 
-![Diagrama UML](diagramaUML.png)
+![Diagrama UML](https://github.com/Mgonzalo11/Programacion-I/blob/main/Primer%20Semestre/Practica_Final/DiagramaUML.png)
 
 ## 📦 Requisitos
 
