@@ -2,22 +2,16 @@ package principal;
 // Declaraciones de Importación
 import dominio.Catalogo;
 import interfaz.Menu;
-import servicios.GestionCatalogo;
-
+/**
+ * Clase principal para ejecutar la aplicación de gestión de software.
+ * Esta clase es el punto de entrada del programa. Crea una instancia del catálogo de software y del menú interactivo que permite al usuario
+ * gestionar el catálogo a través de opciones como añadir, modificar, eliminar y listar software.
+ */
 public class Main {
     public static void main(String[] args) {
         Catalogo catalogo = new Catalogo(); // Crea el catálogo
-        // Definición de la Ruta del Archivo
-        String rutaArchivo = "Primer Semestre/Practica_Final/doc.csv"; // Asegúrate de especificar el archivo correcto
-
-        // Crea la instancia de GestionCatalogo
-        GestionCatalogo GestionCatalogo = new GestionCatalogo(catalogo, rutaArchivo);
-        GestionCatalogo.cargarCatalogo(); // Carga el catálogo desde el archivo
-
-        // Pasar la ruta del archivo al constructor del menú
-        Menu menu = new Menu(catalogo, rutaArchivo); // Modificado aquí
+        // Crea la instancia del menú
+        Menu menu = new Menu(catalogo); // Pasa el catálogo al menú
         menu.mostrarMenu(); // Muestra el menú
     }
 }
-
-// Esto es un comentario
