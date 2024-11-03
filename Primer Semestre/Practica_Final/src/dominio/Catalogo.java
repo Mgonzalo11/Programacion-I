@@ -1,20 +1,26 @@
 package dominio;
+
 import java.io.*;
 import java.util.ArrayList;
+import java.util.List; // Importar la interfaz List
+
 /**
  * La clase Catalogo gestiona un catálogo de software.
  * Permite añadir, eliminar, modificar y listar software.
  */
 public class Catalogo implements Serializable {
-    private ArrayList<Software> listaSoftware; // Lista de productos de software
+    private List<Software> listaSoftware; // Cambiar a List
     private static final String FILE_NAME = "catalogo.dat"; // Nombre del archivo donde se guardará el catálogo
+
     /**
      * Constructor de la clase Catalogo.
      * Inicializa la lista de software y carga los datos del catálogo desde el archivo.
      */
     public Catalogo() {
+        listaSoftware = new ArrayList<>(); // Inicializa la lista
         leer(); // Leer el catálogo al iniciar
     }
+
     /**
      * Añade un nuevo software al catálogo y guarda el cambio en el archivo.
      *
@@ -24,6 +30,7 @@ public class Catalogo implements Serializable {
         listaSoftware.add(software);
         escribir(); // Guardar después de añadir
     }
+
     /**
      * Elimina un software del catálogo basado en su ID y guarda el cambio en el archivo.
      *
@@ -39,6 +46,7 @@ public class Catalogo implements Serializable {
         }
         return false;
     }
+
     /**
      * Modifica un software existente en el catálogo basado en su ID.
      *
@@ -59,6 +67,7 @@ public class Catalogo implements Serializable {
         }
         return false;
     }
+
     /**
      * Busca un software en el catálogo por su ID.
      *
@@ -73,19 +82,20 @@ public class Catalogo implements Serializable {
         }
         return null;
     }
+
     /**
      * Metodo para listar todos los software en el catálogo de manera compacta.
      */
     public void listarSoftware() {
-        System.out.println("\n=========================");
-        System.out.println("    📋 Software Listado    ");
-        System.out.println("=========================");
-        System.out.printf("%-4s | %-20s | %-10s | %-10s | $%-8s\n",
+        System.out.printf("%n=========================%n");
+        System.out.printf("    📋 Software Listado    %n");
+        System.out.printf("=========================%n");
+        System.out.printf("%-4s | %-20s | %-10s | %-10s | $%-8s%n",
                 "ID", "Nombre", "Tipo IA", "Lenguaje", "Precio");
         System.out.println("---------------------------------------------------------------");
 
         for (Software software : listaSoftware) {
-            System.out.printf("%-4d | %-20s | %-10s | %-10s | $%-8.2f\n",
+            System.out.printf("%-4d | %-20s | %-10s | %-10s | $%-8.2f%n",
                     software.getId(),
                     software.getNombre(),
                     software.getTipoIA(),
@@ -93,6 +103,7 @@ public class Catalogo implements Serializable {
                     software.getPrecio());
         }
     }
+
     /**
      * Lee los datos del catálogo desde el archivo y los inicializa.
      * Si ocurre un error, inicializa la lista de software en vacío.
@@ -101,9 +112,10 @@ public class Catalogo implements Serializable {
         try (ObjectInputStream oi = new ObjectInputStream(new FileInputStream(FILE_NAME))) {
             listaSoftware = (ArrayList<Software>) oi.readObject();
         } catch (Exception e) {
-            listaSoftware = new ArrayList<>();
+            listaSoftware = new ArrayList<>(); // Inicializa la lista si hay un error
         }
     }
+
     /**
      * Guarda la lista de software en el archivo.
      * Maneja excepciones en caso de error al guardar.
@@ -115,6 +127,7 @@ public class Catalogo implements Serializable {
             System.out.print("Error al guardar los datos en el fichero: " + e.getMessage());
         }
     }
+
     /**
      * Verifica si el ID del software es único.
      *
@@ -124,14 +137,16 @@ public class Catalogo implements Serializable {
     public boolean esIdUnico(int id) {
         return buscarSoftwarePorId(id) == null;
     }
+
     /**
      * Obtiene la lista de software.
      *
      * @return La lista de software.
      */
-    public ArrayList<Software> getListaSoftware() {
+    public List<Software> getListaSoftware() { // Cambiar a List como tipo de retorno
         return listaSoftware;
     }
+
     /**
      * Verifica si existe un software con el ID dado.
      *
