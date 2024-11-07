@@ -53,7 +53,7 @@ public class FechasEnJava {
         // --------------------------------------------------------------
         // Ejercicio 8: Fecha y hora final de la carrera
         // Fecha final de la carrera (21 de junio de 2029 a las 12:00:00)
-        LocalDateTime fechaFinalCarrera = LocalDateTime.of(2029, 6, 21, 12, 0, 0);
+        LocalDateTime fechaFinalCarrera = LocalDateTime.of(2028, 6, 21, 12, 0, 0);
         LocalDateTime ahora = LocalDateTime.now();
 
         System.out.println("\n🎓 **Fecha final de la carrera**:");
