@@ -1,4 +1,4 @@
-# 🌟 Programación I
+# Programación I
 
 ¡Bienvenido a mi repositorio de **Programación I**! Aquí encontrarás una colección de mis proyectos académicos y personales, donde he aplicado mis conocimientos en programación y explorado nuevas tecnologías.
 
@@ -9,7 +9,7 @@ Este repositorio es un portafolio que muestra mis trabajos y proyectos realizado
 ## 🚀 Proyectos Destacados
 
 - **Padrón de Habitantes**: Una aplicación que permite gestionar un padrón de habitantes, facilitando el acceso, la edición y la eliminación de datos de los habitantes.
-- **Gestor de Catálogo de Productos o Servicios**: Un sistema diseñado para gestionar, organizar y mantener un inventario de productos o servicios utilizados en una organización.
+- **Gestor de Catálogo de Productos o Servicios**: Un sistema diseñado para gestionar, organizar y mantener un inventario de Software utilizados en una organización.
 
 ## 💻 Tecnologías Utilizadas
 
