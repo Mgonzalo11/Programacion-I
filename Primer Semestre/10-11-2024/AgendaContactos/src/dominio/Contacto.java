@@ -1,16 +1,14 @@
 package dominio;
-
 import java.io.Serializable;
-
 /**
- * Clase Contacto que representa un contacto con nombre y número de teléfono.
- * Implementa Serializable para permitir su persistencia en archivos.
+ * Clase Contacto que representa un contacto con nombre, número de teléfono y un atributo
+ * para marcar si es favorito. Implementa la interfaz Serializable para permitir su persistencia
+ * en archivos.
  */
 public class Contacto implements Serializable {
-
-    private String nombre;
-    private String numeroDeTelefono;
-
+    private String nombre;              // Nombre del contacto
+    private String numeroDeTelefono;    // Número de teléfono del contacto
+    private boolean favorito;           // Estado para marcar si el contacto es favorito
     /**
      * Constructor completo que inicializa todos los atributos del contacto.
      *
@@ -20,38 +18,66 @@ public class Contacto implements Serializable {
     public Contacto(String nombre, String numeroDeTelefono) {
         this.nombre = nombre;
         this.numeroDeTelefono = numeroDeTelefono;
+        this.favorito = false; // Inicializa el contacto como no favorito por defecto
     }
-
-    /**
-     * Constructor por defecto que inicializa los atributos con valores vacíos.
-     */
-    public Contacto() {
-        this.nombre = "";
-        this.numeroDeTelefono = "";
-    }
-
     // Métodos getters para acceder a los atributos del contacto
+    /**
+     * Obtiene el nombre del contacto.
+     *
+     * @return Nombre del contacto.
+     */
     public String getNombre() {
         return nombre;
     }
-
+    /**
+     * Obtiene el número de teléfono del contacto.
+     *
+     * @return Número de teléfono del contacto.
+     */
     public String getNumeroDeTelefono() {
         return numeroDeTelefono;
     }
-
     // Métodos setters con retorno del objeto actual para encadenamiento de métodos (fluidez)
+    /**
+     * Establece el nombre del contacto.
+     *
+     * @param nombre Nombre del contacto.
+     * @return El objeto actual para encadenamiento de métodos.
+     */
     public Contacto setNombre(String nombre) {
         this.nombre = nombre;
         return this;
     }
-
+    /**
+     * Establece el número de teléfono del contacto.
+     *
+     * @param numeroDeTelefono Número de teléfono del contacto.
+     * @return El objeto actual para encadenamiento de métodos.
+     */
     public Contacto setNumeroDeTelefono(String numeroDeTelefono) {
         this.numeroDeTelefono = numeroDeTelefono;
         return this;
     }
-
     /**
-     * Representación en forma de cadena del contacto, mostrando nombre y número de teléfono.
+     * Establece si el contacto es favorito o no.
+     *
+     * @param favorito Booleano que indica si el contacto es favorito.
+     * @return El objeto actual para encadenamiento de métodos.
+     */
+    public Contacto setFavorito(boolean favorito) {
+        this.favorito = favorito;
+        return this;
+    }
+    /**
+     * Obtiene el estado de si el contacto es favorito o no.
+     *
+     * @return true si el contacto es favorito, false en caso contrario.
+     */
+    public boolean getFavorito() {
+        return favorito;
+    }
+    /**
+     * Representación en forma de cadena del contacto, mostrando el nombre y el número de teléfono.
      *
      * @return Cadena con la información del contacto.
      */
@@ -59,7 +85,6 @@ public class Contacto implements Serializable {
     public String toString() {
         return String.format("Nombre: %s, Teléfono: %s", nombre, numeroDeTelefono);
     }
-
     /**
      * Metodo para comparar dos contactos. Se consideran iguales si tienen el mismo nombre
      * y número de teléfono.
@@ -75,7 +100,6 @@ public class Contacto implements Serializable {
         Contacto contacto = (Contacto) o;
         return nombre.equals(contacto.nombre) && numeroDeTelefono.equals(contacto.numeroDeTelefono);
     }
-
     /**
      * Genera un código hash para el contacto, utilizando el nombre y número de teléfono.
      *

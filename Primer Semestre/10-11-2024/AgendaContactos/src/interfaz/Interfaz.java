@@ -1,15 +1,12 @@
 package interfaz;
-
-import dominio.Agenda;
-import dominio.Contacto;
+import dominio.*;
+import excepciones.*;
 import java.util.Scanner;
-
 /**
  * Clase Interfaz para gestionar la interacción con el usuario en la consola.
- * Permite realizar operaciones sobre la agenda como añadir, listar, modificar y eliminar contactos.
+ * Permite realizar operaciones sobre la agenda como añadir, listar, modificar, eliminar y marcar como favorito contactos.
  */
 public class Interfaz {
-
     private Agenda agenda;      // Agenda para gestionar los contactos
     private Scanner sc;         // Scanner para leer la entrada del usuario
 
@@ -38,7 +35,6 @@ public class Interfaz {
      */
     public void InterfazUsuario() {
         mostrarOpciones();  // Muestra las opciones disponibles al usuario
-
         while (true) {
             System.out.print("Introduzca la instrucción: ");
             String[] instr = procesarPeticion();
@@ -69,6 +65,13 @@ public class Interfaz {
                         modificar(instr[1], instr[2], instr[3]);
                     } else {
                         System.out.println("Formato incorrecto para 'modify'. Ejemplo: modify,Nombre,Atributo,NuevoValor");
+                    }
+                    break;
+                case "favorito":
+                    if (instr.length == 2) {
+                        favorito(instr[1]);
+                    } else {
+                        System.out.println("Formato incorrecto para 'favorito'. Ejemplo: favorito,Nombre");
                     }
                     break;
                 case "exit":
@@ -112,6 +115,7 @@ public class Interfaz {
                 "- remove: Elimina un contacto por nombre en el formato:\n\tremove,<Nombre>\n" +
                 "- modify: Modifica un contacto en el formato:\n\tmodify,<Nombre>,<Atributo>,<NuevoValor>\n" +
                 "  Atributos modificables: nombre, numeroDeTelefono.\n" +
+                "- favorito: Marca un contacto como favorito en el formato:\n\tfavorito,<Nombre>\n" +
                 "- exit: Guarda y cierra la agenda.\n\n" +
                 "Cada comando debe ser introducido con el formato adecuado, de lo contrario, se mostrará un error.");
     }
@@ -126,18 +130,23 @@ public class Interfaz {
                 "- add: Añade un contacto.\n" +
                 "- remove: Elimina un contacto.\n" +
                 "- modify: Modifica un contacto.\n" +
+                "- favorito: Marca un contacto como favorito.\n" +
                 "- exit: Guarda y cierra la agenda.");
     }
 
     /**
      * Añade un nuevo contacto a la agenda.
      *
-     * @param nombre          Nombre del contacto.
+     * @param nombre           Nombre del contacto.
      * @param numeroDeTelefono Número de teléfono del contacto.
      */
     private void aniadir(String nombre, String numeroDeTelefono) {
-        agenda.add(new Contacto(nombre, numeroDeTelefono));
-        System.out.println("Contacto añadido.");
+        try {
+            agenda.add(new Contacto(nombre, numeroDeTelefono));
+            System.out.println("Contacto añadido.");
+        } catch (ContactoDuplicadoException e) {
+            System.out.println("Error: El contacto ya existe en la agenda.");
+        }
     }
 
     /**
@@ -146,8 +155,12 @@ public class Interfaz {
      * @param nombre Nombre del contacto.
      */
     private void remove(String nombre) {
-        agenda.borrarContacto(new Contacto(nombre, ""));
-        System.out.println("Contacto borrado.");
+        try {
+            agenda.borrarContacto(new Contacto(nombre, ""));
+            System.out.println("Contacto borrado.");
+        } catch (NoEncontradoException e) {
+            System.out.println("Error: El contacto no fue encontrado.");
+        }
     }
 
     /**
@@ -158,11 +171,28 @@ public class Interfaz {
      * @param nuevo    Nuevo valor para el atributo.
      */
     private void modificar(String nombre, String atributo, String nuevo) {
-        if (atributo.equals("nombre") || atributo.equals("telefono")) {
-            agenda.modificarContacto(new Contacto(nombre, ""), atributo, nuevo);
-            System.out.println("Contacto modificado.");
+        try {
+            if (atributo.equals("nombre") || atributo.equals("telefono")) {
+                agenda.modificarContacto(new Contacto(nombre, ""), atributo, nuevo);
+                System.out.println("Contacto modificado.");
+            } else {
+                System.out.println("ATRIBUTO NO VÁLIDO");
+            }
+        } catch (NoEncontradoException e) {
+            System.out.println("Error: El contacto no fue encontrado.");
+        }
+    }
+
+    /**
+     * Marca un contacto como favorito.
+     *
+     * @param nombre Nombre del contacto a marcar como favorito.
+     */
+    private void favorito(String nombre) {
+        if (agenda.cambiarFavoritoV(new Contacto(nombre, ""))) {
+            System.out.println("El contacto ha sido marcado como favorito.");
         } else {
-            System.out.println("ATRIBUTO NO VÁLIDO");
+            System.out.println("El contacto no fue encontrado o no pudo ser marcado como favorito.");
         }
     }
 }
