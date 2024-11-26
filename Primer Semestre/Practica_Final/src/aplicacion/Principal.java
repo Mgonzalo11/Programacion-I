@@ -5,12 +5,17 @@ import excepciones.CatalogoException;
 import interfaz.Menu;
 
 /**
- * Clase principal de la aplicación.
- * Esta clase contiene el punto de entrada de la aplicación.
- * Se encarga de inicializar el catálogo de software y mostrar el menú
- * interactivo para la gestión del catálogo.
+ * Clase principal de la aplicación, que inicia la ejecución del programa.
  */
 public class Principal {
+
+    /**
+     * Constructor predeterminado de la clase Principal.
+     * No es necesario para la ejecución, ya que no se requieren campos de instancia.
+     */
+    public Principal() {
+        // Constructor vacío generado automáticamente.
+    }
 
     /**
      * Metodo principal que inicia la ejecución de la aplicación.

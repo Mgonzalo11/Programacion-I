@@ -11,6 +11,9 @@ import java.util.List;
  * Los datos se almacenan y recuperan de un archivo serializado.
  */
 public class Catalogo implements Serializable {
+    /**
+     * Lista que contiene todos los objetos de tipo {@link Software} en el catálogo.
+     */
     private List<Software> listaSoftware;
     private static final String FILE_NAME = "catalogo.dat";
 
@@ -119,9 +122,10 @@ public class Catalogo implements Serializable {
      * @throws CatalogoException Si ocurre un error al leer el archivo.
      * @throws ClassCastException Si no se puede convertir el contenido del archivo a la lista esperada.
      */
+    @SuppressWarnings("unchecked")
     public void leer() throws CatalogoException {
         try (ObjectInputStream oi = new ObjectInputStream(new FileInputStream(FILE_NAME))) {
-            listaSoftware = (List<Software>) oi.readObject();
+            listaSoftware = (List<Software>) oi.readObject(); // Supresión de advertencia intencionada.
         } catch (FileNotFoundException e) {
             listaSoftware = new ArrayList<>();
         } catch (Exception e) {
@@ -159,7 +163,7 @@ public class Catalogo implements Serializable {
      * @return true si el software existe, false si no.
      */
     public boolean existeSoftware(int id) {
-        return buscarSoftwarePorId(id) != null;
+        return buscarSoftwarePorId(id) != null; // Evitar invertir la lógica.
     }
 
     /**

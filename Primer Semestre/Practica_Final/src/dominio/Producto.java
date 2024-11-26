@@ -8,23 +8,32 @@ import java.io.Serializable;
  * Es la clase padre para elementos más específicos como Software.
  */
 public class Producto implements Serializable {
+    /**
+     * Identificador único del producto.
+     */
     private final int id;
+
+    /**
+     * Nombre del producto.
+     */
     private String nombre;
+
+    /**
+     * Precio del producto.
+     */
     private double precio;
 
     /**
-     * Constructor de la clase Producto.
-     * Crea un nuevo producto con los datos proporcionados.
+     * Constructor para crear un producto con un ID, nombre y precio.
      *
      * @param id El identificador único del producto.
      * @param nombre El nombre del producto.
      * @param precio El precio del producto.
-     * @throws IllegalArgumentException Si el nombre es nulo o vacío, o si el precio no es válido.
      */
     public Producto(int id, String nombre, double precio) {
         this.id = id;
-        setNombre(nombre);
-        setPrecio(precio);
+        this.nombre = nombre;
+        this.precio = precio;
     }
 
     /**

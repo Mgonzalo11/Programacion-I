@@ -6,8 +6,19 @@ package dominio;
  * el tipo de inteligencia artificial, el lenguaje y su uso principal.
  */
 public class Software extends Producto {
+    /**
+     * Tipo de inteligencia artificial que utiliza el software.
+     */
     private String tipoIA;
+
+    /**
+     * Lenguaje de programación del software.
+     */
     private String lenguaje;
+
+    /**
+     * Uso principal para el cual está diseñado el software.
+     */
     private String usoPrincipal;
 
     /**
