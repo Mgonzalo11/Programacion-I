@@ -32,13 +32,6 @@ La aplicación está diseñada para manejar entradas no válidas, asegurando que
 - IDs duplicados al añadir software
 - Entradas de tipo incorrecto, utilizando excepciones para prevenir errores.
 
-## 💻 Estructura del Proyecto
-
-El proyecto está organizado en los siguientes paquetes:
-
-- **interfaz**: Contiene la clase `Menu` para la interacción con el usuario.
-- **dominio**: Incluye las clases `Catalogo` y `Software`, esenciales para la gestión del catálogo.
-- **controlador**: (Opcional) Para futuras mejoras y lógica adicional.
 
 ## 📊 Diagrama UML
 
