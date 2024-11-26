@@ -1,1 +1,1 @@
-typeSearchIndex = [{"l":"All Classes and Interfaces","u":"allclasses-index.html"},{"p":"dominio","l":"Catalogo"},{"p":"interfaz","l":"Menu"},{"p":"aplicacion","l":"Principal"},{"p":"dominio","l":"Software"}];updateSearchResults();
+typeSearchIndex = [{"l":"All Classes and Interfaces","u":"allclasses-index.html"},{"p":"dominio","l":"Catalogo"},{"p":"excepciones","l":"CatalogoException"},{"p":"interfaz","l":"Menu"},{"p":"aplicacion","l":"Principal"},{"p":"dominio","l":"Producto"},{"p":"dominio","l":"Software"}];updateSearchResults();

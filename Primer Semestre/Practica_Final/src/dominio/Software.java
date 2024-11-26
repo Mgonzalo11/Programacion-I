@@ -1,97 +1,110 @@
 package dominio;
-import java.io.Serializable;
+
 /**
- * La clase Software representa un producto de software con información detallada sobre su nombre, tipo de inteligencia artificial,
- * lenguaje de programación, uso principal y precio. Proporciona métodos para acceder y modificar estos atributos, y asegura la
- * validez de los datos mediante verificaciones en los métodos de establecimiento.
+ * Clase que representa un software, heredando de Producto.
+ * Esta clase incluye atributos específicos para un software, como
+ * el tipo de inteligencia artificial, el lenguaje y su uso principal.
  */
-public class Software implements Serializable {
-    private final int id; // Identificador único del software
-    private String nombre; // Nombre del software
-    private String tipoIA; // Tipo de inteligencia artificial utilizada
-    private String lenguaje; // Lenguaje de programación
-    private String usoPrincipal; // Uso principal o función del software
-    private double precio; // Precio del software
+public class Software extends Producto {
+    private String tipoIA;
+    private String lenguaje;
+    private String usoPrincipal;
+
     /**
-     * Constructor que inicializa todos los atributos de Software.
+     * Constructor de la clase Software.
+     * Inicializa un nuevo objeto Software con los atributos proporcionados.
      *
-     * @param id Identificador único del software.
-     * @param nombre Nombre del software.
-     * @param tipoIA Tipo de inteligencia artificial que utiliza.
-     * @param lenguaje Lenguaje de programación utilizado.
-     * @param usoPrincipal Uso principal del software.
-     * @param precio Precio del software.
-     * @throws IllegalArgumentException si alguno de los valores es inválido.
+     * @param id El identificador único del software.
+     * @param nombre El nombre del software.
+     * @param tipoIA El tipo de inteligencia artificial que utiliza el software.
+     * @param lenguaje El lenguaje de programación del software.
+     * @param usoPrincipal El uso principal para el cual está diseñado el software.
+     * @param precio El precio del software.
+     * @throws IllegalArgumentException Si algún argumento no cumple con las validaciones.
      */
     public Software(int id, String nombre, String tipoIA, String lenguaje, String usoPrincipal, double precio) {
-        this.id = id; // Inicializa el ID del software
-        setNombre(nombre); // Establece el nombre del software, validando su contenido
-        setTipoIA(tipoIA); // Establece el tipo de inteligencia artificial, validando su contenido
-        setLenguaje(lenguaje); // Establece el lenguaje de programación, validando su contenido
-        setUsoPrincipal(usoPrincipal); // Establece el uso principal del software, validando su contenido
-        setPrecio(precio); // Establece el precio, validando que sea mayor a 0
+        super(id, nombre, precio);
+        setTipoIA(tipoIA);
+        setLenguaje(lenguaje);
+        setUsoPrincipal(usoPrincipal);
     }
-    // Métodos getter y setter (no modificados)
-    public int getId() {
-        return id; // Retorna el ID del software
-    }
-    public String getNombre() {
-        return nombre; // Retorna el nombre del software
-    }
-    public void setNombre(String nombre) {
-        if (nombre == null || nombre.trim().isEmpty()) {
-            throw new IllegalArgumentException("El nombre no puede estar vacío."); // Valida que el nombre no sea nulo o vacío
-        }
-        this.nombre = nombre; // Asigna el nuevo nombre
-    }
+
+    /**
+     * Obtiene el tipo de inteligencia artificial del software.
+     *
+     * @return El tipo de inteligencia artificial.
+     */
     public String getTipoIA() {
-        return tipoIA; // Retorna el tipo de IA del software
+        return tipoIA;
     }
+
+    /**
+     * Establece el tipo de inteligencia artificial del software.
+     *
+     * @param tipoIA El tipo de inteligencia artificial.
+     * @throws IllegalArgumentException Si el tipo de IA es nulo o vacío.
+     */
     public void setTipoIA(String tipoIA) {
         if (tipoIA == null || tipoIA.trim().isEmpty()) {
-            throw new IllegalArgumentException("El tipo de IA no puede estar vacío."); // Valida que el tipo de IA no sea nulo o vacío
+            throw new IllegalArgumentException("El tipo de IA no puede estar vacío.");
         }
-        this.tipoIA = tipoIA; // Asigna el nuevo tipo de IA
+        this.tipoIA = tipoIA;
     }
+
+    /**
+     * Obtiene el lenguaje de programación del software.
+     *
+     * @return El lenguaje de programación.
+     */
     public String getLenguaje() {
-        return lenguaje; // Retorna el lenguaje de programación del software
+        return lenguaje;
     }
+
+    /**
+     * Establece el lenguaje de programación del software.
+     *
+     * @param lenguaje El lenguaje de programación.
+     * @throws IllegalArgumentException Si el lenguaje es nulo o vacío.
+     */
     public void setLenguaje(String lenguaje) {
         if (lenguaje == null || lenguaje.trim().isEmpty()) {
-            throw new IllegalArgumentException("El lenguaje no puede estar vacío."); // Valida que el lenguaje no sea nulo o vacío
+            throw new IllegalArgumentException("El lenguaje no puede estar vacío.");
         }
-        this.lenguaje = lenguaje; // Asigna el nuevo lenguaje
+        this.lenguaje = lenguaje;
     }
+
+    /**
+     * Obtiene el uso principal del software.
+     *
+     * @return El uso principal del software.
+     */
     public String getUsoPrincipal() {
-        return usoPrincipal; // Retorna el uso principal del software
+        return usoPrincipal;
     }
+
+    /**
+     * Establece el uso principal del software.
+     *
+     * @param usoPrincipal El uso principal del software.
+     * @throws IllegalArgumentException Si el uso principal es nulo o vacío.
+     */
     public void setUsoPrincipal(String usoPrincipal) {
         if (usoPrincipal == null || usoPrincipal.trim().isEmpty()) {
-            throw new IllegalArgumentException("El uso principal no puede estar vacío."); // Valida que el uso principal no sea nulo o vacío
+            throw new IllegalArgumentException("El uso principal no puede estar vacío.");
         }
-        this.usoPrincipal = usoPrincipal; // Asigna el nuevo uso principal
+        this.usoPrincipal = usoPrincipal;
     }
-    public double getPrecio() {
-        return precio; // Retorna el precio del software
-    }
-    public void setPrecio(double precio) {
-        if (precio <= 0) {
-            throw new IllegalArgumentException("El precio debe ser mayor que 0."); // Valida que el precio sea mayor que 0
-        }
-        this.precio = precio; // Asigna el nuevo precio
-    }
+
     /**
-     * Devuelve una representación en cadena del software con todos sus atributos.
+     * Devuelve una representación en formato de cadena del objeto Software.
      *
-     * @return Representación en formato String del software.
+     * @return Una cadena que describe el software con sus atributos.
      */
     @Override
     public String toString() {
-        return "Software - ID: " + id +
-                ", Nombre: '" + nombre + '\'' +
+        return super.toString() +
                 ", Tipo de IA: '" + tipoIA + '\'' +
                 ", Lenguaje: '" + lenguaje + '\'' +
-                ", Uso Principal: '" + usoPrincipal + '\'' +
-                ", Precio: $" + String.format("%.2f", precio); // Representación legible del objeto
+                ", Uso Principal: '" + usoPrincipal + '\'';
     }
 }
