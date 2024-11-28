@@ -125,7 +125,7 @@ public class Catalogo implements Serializable {
     @SuppressWarnings("unchecked")
     public void leer() throws CatalogoException {
         try (ObjectInputStream oi = new ObjectInputStream(new FileInputStream(FILE_NAME))) {
-            listaSoftware = (List<Software>) oi.readObject(); // Supresión de advertencia intencionada.
+            listaSoftware = (List<Software>) oi.readObject();
         } catch (FileNotFoundException e) {
             listaSoftware = new ArrayList<>();
         } catch (Exception e) {
@@ -173,5 +173,28 @@ public class Catalogo implements Serializable {
      */
     public List<Software> getListaSoftware() {
         return listaSoftware;
+    }
+    /**
+     * Devuelve el número de software en el catálogo.
+     *
+     * @return El número de software en el catálogo.
+     */
+    public int contarSoftware() {
+        return listaSoftware.size();
+    }
+    /**
+     * Devuelve una cadena con todos los datos del catálogo de software.
+     * @return Una cadena con todos los datos del catálogo.
+     */
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        for (Software software : listaSoftware) {
+            sb.append("ID: ").append(software.getId()).append(", ");
+            sb.append("Nombre: ").append(software.getNombre()).append(", ");
+            sb.append("Tipo IA: ").append(software.getTipoIA()).append(", ");
+            sb.append("Lenguaje: ").append(software.getLenguaje()).append(", ");
+            sb.append("Precio: $").append(software.getPrecio()).append("\n");
+        }
+        return sb.toString();
     }
 }

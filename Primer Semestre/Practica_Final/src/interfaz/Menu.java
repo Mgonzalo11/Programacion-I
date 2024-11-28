@@ -1,7 +1,6 @@
 package interfaz;
 
-import dominio.Catalogo;
-import dominio.Software;
+import dominio.*;
 import excepciones.CatalogoException;
 import java.util.InputMismatchException;
 import java.util.Scanner;
@@ -42,12 +41,13 @@ public class Menu {
             System.out.println("2. ✏️ Modificar Software");
             System.out.println("3. ❌ Eliminar Software");
             System.out.println("4. 📋 Listar Software");
+            System.out.println("5. ℹ️ Ayuda");
             System.out.println("0. 🚪 Salir");
             System.out.print("🔍 Seleccione una opción: ");
 
             try {
                 opcion = scanner.nextInt();
-                scanner.nextLine(); // Limpia el buffer de entrada.
+                scanner.nextLine();
 
                 switch (opcion) {
                     case 1:
@@ -62,6 +62,9 @@ public class Menu {
                     case 4:
                         listarSoftware();
                         break;
+                    case 5:
+                        ayuda();
+                        break;
                     case 0:
                         System.out.println("👋 Saliendo...");
                         break;
@@ -70,15 +73,27 @@ public class Menu {
                 }
             } catch (InputMismatchException e) {
                 System.out.println(MENSAJE_ENTRADA_NO_VALIDA);
-                scanner.nextLine(); // Limpia el buffer de entrada.
+                scanner.nextLine();
                 opcion = -1;
             }
         } while (opcion != 0);
     }
 
     /**
+     * Metodo de ayuda que imprime todas las opciones disponibles en el programa.
+     */
+    public static void ayuda() {
+        System.out.println("Tiene las siguientes opciones disponibles: " +
+                "\n 1. ➕ Añadir Software: para añadir un software al catálogo." +
+                "\n 2. ✏️ Modificar Software: para modificar un software existente." +
+                "\n 3. ❌ Eliminar Software: para eliminar un software del catálogo." +
+                "\n 4. 📋 Listar Software: para listar todos los software en el catálogo." +
+                "\n 0. 🚪 Salir: para salir del programa.");
+    }
+
+    /**
      * Añade un nuevo software al catálogo.
-     * Solicita al usuario los datos necesarios y valida la entrada antes de añadir el software.
+     * Solicita al usuario los datos necesarios y válida la entrada antes de añadir el software.
      * Maneja excepciones relacionadas con entradas no válidas y errores de escritura en el catálogo.
      */
     private void anadirSoftware() {
@@ -99,11 +114,54 @@ public class Menu {
             String usoPrincipal = scanner.nextLine();
             System.out.print("Ingrese Precio (mayor que 0): ");
             double precio = scanner.nextDouble();
+            scanner.nextLine(); // Limpia el buffer de entrada.
             if (precio <= 0) {
                 System.out.println("⚠️ El precio debe ser mayor que 0.");
                 return;
             }
-            Software software = new Software(id, nombre, tipoIA, lenguaje, usoPrincipal, precio);
+
+            System.out.println("Seleccione el tipo de software:");
+            System.out.println("1. Software de Sistema");
+            System.out.println("2. Software de Aplicación");
+            System.out.println("3. Software de Programación");
+            System.out.println("4. Software de Seguridad");
+            System.out.println("5. Software de Entretenimiento");
+            System.out.print("🔍 Seleccione una opción: ");
+            int tipo = scanner.nextInt();
+            scanner.nextLine(); // Limpia el buffer de entrada.
+
+            Software software = null;
+            switch (tipo) {
+                case 1:
+                    System.out.print("Ingrese Sistema Operativo: ");
+                    String sistemaOperativo = scanner.nextLine();
+                    software = new SoftwareDeSistema(id, nombre, tipoIA, lenguaje, usoPrincipal, precio, sistemaOperativo);
+                    break;
+                case 2:
+                    System.out.print("Ingrese Categoría: ");
+                    String categoria = scanner.nextLine();
+                    software = new SoftwareDeAplicacion(id, nombre, tipoIA, lenguaje, usoPrincipal, precio, categoria);
+                    break;
+                case 3:
+                    System.out.print("Ingrese Lenguaje Soportado: ");
+                    String lenguajeSoportado = scanner.nextLine();
+                    software = new SoftwareDeProgramacion(id, nombre, tipoIA, lenguaje, usoPrincipal, precio, lenguajeSoportado);
+                    break;
+                case 4:
+                    System.out.print("Ingrese Tipo de Protección: ");
+                    String tipoProteccion = scanner.nextLine();
+                    software = new SoftwareDeSeguridad(id, nombre, tipoIA, lenguaje, usoPrincipal, precio, tipoProteccion);
+                    break;
+                case 5:
+                    System.out.print("Ingrese Tipo de Entretenimiento: ");
+                    String tipoEntretenimiento = scanner.nextLine();
+                    software = new SoftwareDeEntretenimiento(id, nombre, tipoIA, lenguaje, usoPrincipal, precio, tipoEntretenimiento);
+                    break;
+                default:
+                    System.out.println("❌ Opción no válida.");
+                    return;
+            }
+
             catalogo.anadirSoftware(software);
             System.out.println("✅ Software añadido con éxito.");
         } catch (InputMismatchException e) {
@@ -208,7 +266,7 @@ public class Menu {
 
     /**
      * Obtiene un ID de software válido ingresado por el usuario.
-     * Valida que el ID sea un número mayor que cero.
+     * Válida que el ID sea un número mayor que cero.
      *
      * @return El ID del software ingresado.
      */

@@ -1,11 +1,28 @@
 package dominio;
 
+import java.io.Serializable;
+
 /**
- * Clase que representa un software, heredando de Producto.
+ * Clase que representa un software.
  * Esta clase incluye atributos específicos para un software, como
  * el tipo de inteligencia artificial, el lenguaje y su uso principal.
  */
-public class Software extends Producto {
+public class Software implements Serializable {
+    /**
+     * Identificador único del software.
+     */
+    private final int id;
+
+    /**
+     * Nombre del software.
+     */
+    private String nombre;
+
+    /**
+     * Precio del software.
+     */
+    private double precio;
+
     /**
      * Tipo de inteligencia artificial que utiliza el software.
      */
@@ -34,10 +51,65 @@ public class Software extends Producto {
      * @throws IllegalArgumentException Si algún argumento no cumple con las validaciones.
      */
     public Software(int id, String nombre, String tipoIA, String lenguaje, String usoPrincipal, double precio) {
-        super(id, nombre, precio);
-        setTipoIA(tipoIA);
-        setLenguaje(lenguaje);
-        setUsoPrincipal(usoPrincipal);
+        this.id = id;
+        this.nombre = nombre;
+        this.tipoIA = tipoIA;
+        this.lenguaje = lenguaje;
+        this.usoPrincipal = usoPrincipal;
+        this.precio = precio;
+    }
+
+    /**
+     * Obtiene el identificador único del software.
+     *
+     * @return El identificador único del software.
+     */
+    public int getId() {
+        return id;
+    }
+
+    /**
+     * Obtiene el nombre del software.
+     *
+     * @return El nombre del software.
+     */
+    public String getNombre() {
+        return nombre;
+    }
+
+    /**
+     * Establece el nombre del software.
+     *
+     * @param nombre El nombre del software.
+     * @throws IllegalArgumentException Si el nombre es nulo o está vacío.
+     */
+    public void setNombre(String nombre) {
+        if (nombre == null || nombre.trim().isEmpty()) {
+            throw new IllegalArgumentException("El nombre no puede estar vacío.");
+        }
+        this.nombre = nombre;
+    }
+
+    /**
+     * Obtiene el precio del software.
+     *
+     * @return El precio del software.
+     */
+    public double getPrecio() {
+        return precio;
+    }
+
+    /**
+     * Establece el precio del software.
+     *
+     * @param precio El precio del software.
+     * @throws IllegalArgumentException Si el precio es menor o igual a 0.
+     */
+    public void setPrecio(double precio) {
+        if (precio <= 0) {
+            throw new IllegalArgumentException("El precio debe ser mayor que 0.");
+        }
+        this.precio = precio;
     }
 
     /**
@@ -113,7 +185,9 @@ public class Software extends Producto {
      */
     @Override
     public String toString() {
-        return super.toString() +
+        return "Software - ID: " + id +
+                ", Nombre: '" + nombre + '\'' +
+                ", Precio: $" + String.format("%.2f", precio) +
                 ", Tipo de IA: '" + tipoIA + '\'' +
                 ", Lenguaje: '" + lenguaje + '\'' +
                 ", Uso Principal: '" + usoPrincipal + '\'';
