@@ -1,6 +1,7 @@
 package dominio;
 
 import java.io.Serializable;
+import java.util.Objects;
 
 /**
  * Clase que representa un software.
@@ -178,6 +179,34 @@ public class Software implements Serializable {
         this.usoPrincipal = usoPrincipal;
     }
 
+    /**
+     * Compara este objeto Software con el objeto especificado para determinar si son iguales.
+     *
+     * @param o El objeto a comparar con este Software.
+     * @return true si los objetos son iguales, false en caso contrario.
+     */
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Software software = (Software) o;
+        return id == software.id &&
+                Double.compare(software.precio, precio) == 0 &&
+                Objects.equals(nombre, software.nombre) &&
+                Objects.equals(tipoIA, software.tipoIA) &&
+                Objects.equals(lenguaje, software.lenguaje) &&
+                Objects.equals(usoPrincipal, software.usoPrincipal);
+    }
+
+    /**
+     * Devuelve un código hash para este objeto Software.
+     *
+     * @return Un valor de código hash para este Software.
+     */
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, nombre, precio, tipoIA, lenguaje, usoPrincipal);
+    }
     /**
      * Devuelve una representación en formato de cadena del objeto Software.
      *

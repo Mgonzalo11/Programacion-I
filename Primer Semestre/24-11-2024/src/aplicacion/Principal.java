@@ -17,7 +17,7 @@ public class Principal {
      */
     public static void main(String[] args) {
         // Crear una banda de música
-        BandaMusica bd = new BandaMusica("Banda de Música de Villar del Monte");
+        BandaMusica bd = new BandaMusica("Banda de Música de Los Pibardos");
         // Crear la primera actuación
         Actuacion act1 = new Actuacion(LocalDate.of(2024, 11, 24));
         bd.annadirActuacion(act1); // Añadir la actuación a la banda
