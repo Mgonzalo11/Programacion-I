@@ -183,7 +183,8 @@ public class Catalogo implements Serializable {
         return listaSoftware.size();
     }
     /**
-     * Devuelve una cadena con todos los datos del catálogo de software.
+     * Metodo Stringbuilder que devuelve una cadena con todos
+     * los datos del catálogo de software.
      * @return Una cadena con todos los datos del catálogo.
      */
     public String toString() {

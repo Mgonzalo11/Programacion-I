@@ -1,0 +1,136 @@
+@startuml
+class dominio.Software {
+    - int id
+    - String nombre
+    - double precio
+    - String tipoIA
+    - String lenguaje
+    - String usoPrincipal
+
+    + Software(int id, String nombre, String tipoIA, String lenguaje, String usoPrincipal, double precio)
+    + int getId()
+    + String getNombre()
+    + void setNombre(String nombre)
+    + double getPrecio()
+    + void setPrecio(double precio)
+    + String getTipoIA()
+    + void setTipoIA(String tipoIA)
+    + String getLenguaje()
+    + void setLenguaje(String lenguaje)
+    + String getUsoPrincipal()
+    + void setUsoPrincipal(String usoPrincipal)
+    + boolean equals(Object o)
+    + int hashCode()
+    + String toString()
+}
+
+class dominio.SoftwareDeAplicacion extends Software {
+    - String categoria
+
+    + SoftwareDeAplicacion(int id, String nombre, String tipoIA, String lenguaje, String usoPrincipal, double precio, String categoria)
+    + String getCategoria()
+    + void setCategoria(String categoria)
+    + String toString()
+}
+
+class dominio.SoftwareDeEntretenimiento extends Software {
+    - String tipoEntretenimiento
+
+    + SoftwareDeEntretenimiento(int id, String nombre, String tipoIA, String lenguaje, String usoPrincipal, double precio, String tipoEntretenimiento)
+    + String getTipoEntretenimiento()
+    + void setTipoEntretenimiento(String tipoEntretenimiento)
+    + String toString()
+}
+
+class dominio.SoftwareDeProgramacion extends Software {
+    - String lenguajeSoportado
+
+    + SoftwareDeProgramacion(int id, String nombre, String tipoIA, String lenguaje, String usoPrincipal, double precio, String lenguajeSoportado)
+    + String getLenguajeSoportado()
+    + void setLenguajeSoportado(String lenguajeSoportado)
+    + String toString()
+}
+
+class dominio.SoftwareDeSeguridad extends Software {
+    - String tipoProteccion
+
+    + SoftwareDeSeguridad(int id, String nombre, String tipoIA, String lenguaje, String usoPrincipal, double precio, String tipoProteccion)
+    + String getTipoProteccion()
+    + void setTipoProteccion(String tipoProteccion)
+    + String toString()
+}
+
+class dominio.SoftwareDeSistema extends Software {
+    - String sistemaOperativo
+
+    + SoftwareDeSistema(int id, String nombre, String tipoIA, String lenguaje, String usoPrincipal, double precio, String sistemaOperativo)
+    + String getSistemaOperativo()
+    + void setSistemaOperativo(String sistemaOperativo)
+    + String toString()
+}
+
+class dominio.Catalogo {
+    - List<Software> listaSoftware
+    - static final String FILE_NAME
+
+    + Catalogo()
+    + void anadirSoftware(Software software)
+    + boolean eliminarSoftware(int id)
+    + boolean modificarSoftware(int id, Software nuevoSoftware)
+    + Software buscarSoftwarePorId(int id)
+    + void listarSoftware()
+    + void leer()
+    + void escribir()
+    + boolean esIdUnico(int id)
+    + boolean existeSoftware(int id)
+    + List<Software> getListaSoftware()
+    + int contarSoftware()
+    + String toString()
+}
+
+class interfaz.Menu {
+    - Catalogo catalogo
+    - Scanner scanner
+    - static final String MENSAJE_ENTRADA_NO_VALIDA
+    - static final String MENSAJE_ID_MAYOR_QUE_CERO
+    - static final String MENSAJE_NO_ENCONTRADO
+
+    + Menu(Catalogo catalogo)
+    + void mostrarMenu()
+    + static void ayuda()
+    + void anadirSoftware()
+    + void modificarSoftware()
+    + void eliminarSoftware()
+    + void listarSoftware()
+    + int obtenerIdSoftware()
+}
+
+class dominio.Catalogo {
+    - List<Software> listaSoftware
+    - static final String FILE_NAME
+
+    + Catalogo()
+    + void anadirSoftware(Software software)
+    + boolean eliminarSoftware(int id)
+    + boolean modificarSoftware(int id, Software nuevoSoftware)
+    + Software buscarSoftwarePorId(int id)
+    + void listarSoftware()
+    + void leer() throws CatalogoException
+    + void escribir() throws CatalogoException
+    + boolean esIdUnico(int id)
+    + boolean existeSoftware(int id)
+    + List<Software> getListaSoftware()
+    + int contarSoftware()
+    + String toString()
+}
+
+class excepciones.CatalogoException extends Exception {
+    + CatalogoException(String message)
+    + CatalogoException(String message, Throwable cause)
+}
+
+class Main {
+    + static void main(String[] args)
+}
+@enduml
+

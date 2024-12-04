@@ -7,6 +7,8 @@ import java.util.Objects;
  * Clase que representa un software.
  * Esta clase incluye atributos específicos para un software, como
  * el tipo de inteligencia artificial, el lenguaje y su uso principal.
+ * La clase implementa la interfaz {@link Serializable} para poder ser
+ * almacenada en un archivo.
  */
 public class Software implements Serializable {
     /**
