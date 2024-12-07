@@ -84,7 +84,7 @@ public class Menu {
      */
     public static void ayuda() {
         System.out.println("Tiene las siguientes opciones disponibles: " +
-                "\n 1. ➕ Añadir Software: para añadir un software al catálogo." +
+                "   \n 1. ➕ Añadir Software: para añadir un software al catálogo." +
                 "\n 2. ✏️ Modificar Software: para modificar un software existente." +
                 "\n 3. ❌ Eliminar Software: para eliminar un software del catálogo." +
                 "\n 4. 📋 Listar Software: para listar todos los software en el catálogo." +
