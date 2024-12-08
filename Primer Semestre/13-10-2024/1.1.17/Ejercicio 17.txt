@@ -1,0 +1,14 @@
+Ejercicio 17. El propósito del presente ejercicio es mostrar cómo organizar
+las clases Java en paquetes. Se pide organizar las clases del proyecto padron
+de la siguiente manera:
+1. Explique qué es un paquete.
+Paquetes son elementos de agrupación que permiten la modularización de código. Se basan en criterios de independencia funcional, buscando alta cohesión y bajo acoplamiento.
+•	Se define un paquete con la palabra clave package al inicio del código.
+•	Si no se define un paquete, se asigna uno por defecto llamado "default".
+•	El nombre del paquete refleja la estructura de los directorios. 
+•	La cláusula import permite que un módulo haga referencia a tipos definidos en otros paquetes.
+
+2. Las clases Habitante y OficinaPadron formarán parte del paquete
+dominio.
+3. La clase InterfazUsuario formará parte del paquete presentacion.
+4. La clase Comprobacion formará parte del paquete comprobaciones.

@@ -1,0 +1,131 @@
+Preincremento (++variable): Incrementa el valor de la variable antes de que sea utilizada en una expresión.
+
+Posincremento (variable++): Utiliza el valor actual de la variable en una expresión antes de incrementar su valor.
+
+Código 1:
+public class Principal {
+    public static void main(String[] args) {
+        int i = 1; // Inicializa la variable 'i' con el valor 1
+        while (i <= 10) // Inicia un bucle while que se ejecutará mientras 'i' sea menor o igual a 10
+            System.out.println(i++); // Imprime el valor de 'i' y luego incrementa 'i' en 1
+    }
+}
+
+Código 2:
+
+public class Principal {
+    public static void main(String[] args) {
+        for (int i = 1; i <= 10; i++) // Bucle 'for' que itera desde 1 hasta 10
+            System.out.println(i); // Imprime el valor de 'i' en cada iteración
+    }
+}
+
+Código 3: 
+public class Principal {
+    public static void main(String[] args) {
+        // Mensaje que indica la ejecución del primer bucle while
+        System.out.println("Ejecutándose primer bucle while...");
+        // Primer bucle while
+        int i = 1;
+        while (i <= 10) 
+            System.out.println(i++); // Imprime los números del 1 al 10
+        // Mensaje que indica la ejecución del primer bucle do-while
+        System.out.println("Ejecutándose primer bucle do-while...");
+        // Primer bucle do-while
+        i = 1;
+        do 
+            System.out.println(i++); // Imprime los números del 1 al 10
+        while (i <= 10);
+        // Mensaje que indica la ejecución del segundo bucle while
+        System.out.println("Ejecutándose segundo bucle while...");
+        // Segundo bucle while
+        i = 1;
+        while (i < 0) 
+            System.out.println(i++); // No se ejecuta porque la condición (i < 0) es falsa desde el principio
+        // Mensaje que indica la ejecución del segundo bucle do-while
+        System.out.println("Ejecutándose segundo bucle do-while...");
+        // Segundo bucle do-while
+        i = 1;
+        do 
+            System.out.println(i++); // No se ejecuta porque la condición (i < 0) es falsa
+        while (i < 0);
+    }
+}
+
+Código 4:
+public class Principal {
+    public static void main(String[] args) {
+        // Se inicializan las variables
+        int i = 1;          // 'i' es el contador que empieza en 1
+        int suma = 0;       // 'suma' es la variable que almacenará la suma de los números
+        // Bucle while: se ejecuta mientras 'i' sea menor o igual a 100
+        while (i <= 100) {
+            suma = suma + i; // Añade el valor actual de 'i' a 'suma'
+            i++;             // Incrementa 'i' en 1
+        }
+        // Después de salir del bucle, se imprime el resultado de la suma
+        System.out.println(suma);  // Imprime la suma de los números del 1 al 100
+    }
+}
+
+Código 5:
+public class Principal {
+    public static void main(String[] args) {
+        // Se inicializa la variable 'suma' que almacenará el resultado de la suma
+        int suma = 0;        
+        // Bucle 'for': se ejecuta desde 'i' = 1 hasta 'i' <= 100
+        for (int i = 1; i <= 100; i++) {
+            suma = suma + i;  // Suma el valor actual de 'i' a la variable 'suma'
+        }
+        // Imprime el resultado final de la suma
+        System.out.println(suma);  // Imprime el valor de la suma de los números del 1 al 100
+    }
+}
+
+Código 6:
+public class Principal {
+    public static void main(String[] args) {
+        // Se crea un array de enteros de tamaño 10
+        int[] x = new int[10];  
+        // Se asignan valores a los primeros tres elementos del array
+        x[0] = 3;
+        x[1] = 6;
+        x[2] = 8;
+        // Se inicializa una variable 'j' con valor 0
+        int j = 0;
+        // Se imprime el valor del primer elemento del array, luego incrementa 'j'
+        System.out.println(x[j++]);  // Imprime 3 y luego j se incrementa a 1
+        // Se imprime el encabezado para el bucle 'while'
+        System.out.println("BUCLE WHILE");
+        System.out.println("===========");        
+        // Bucle while que recorre todo el array
+        int i = 0;
+        while (i < x.length) {
+            System.out.println(x[i++]);  // Imprime los elementos del array uno por uno
+        }        
+        // Se imprime el encabezado para el bucle 'for'
+        System.out.println("nBUCLE FOR");
+        System.out.println("==========");        
+        // Bucle for que también recorre el array
+        for (int k = 0; k < x.length; k++) {
+            System.out.println(x[k]);  // Imprime los elementos del array uno por uno
+        }        
+        // Se imprime el encabezado para el bucle 'do-while'
+        System.out.println("nBUCLE DO");
+        System.out.println("=========");        
+        // Bucle do-while que recorre el array
+        int l = 0;
+        do {
+            System.out.println(x[l++]);  // Imprime los elementos del array uno por uno
+        } while (l < x.length - 1);  // Detiene el bucle cuando l es igual a x.length - 1
+    }
+}
+
+7. ¿Qué ocurre si se intenta acceder a una posición mayor o igual a la longitud del array?
+Si se intenta acceder a una posición mayor o igual a la longitud del array en Java, se producirá una ArrayIndexOutOfBoundsException (Excepción de índice fuera de los límites del array).
+
+8. ¿Por qué el bucle do-while tiene una condición diferente a la de los otros dos?
+El bucle do-while tiene una condición diferente a la de los bucles while y for porque evalúa la condición después de ejecutar el bloque de código, lo que significa que el código dentro del bucle se ejecuta al menos una vez, independientemente de si la condición es verdadera o falsa desde el principio.
+
+9. ¿Qué criterio se utiliza para utilizar un bucle do-while en lugar de un bucle while?
+El criterio principal para utilizar un bucle do-while en lugar de un bucle while es cuando necesitas que el código dentro del bucle se ejecute al menos una vez, independientemente de si la condición es verdadera o falsa al inicio.

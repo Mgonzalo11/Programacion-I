@@ -1,0 +1,32 @@
+Enunciado del Supuesto
+
+Se requiere desarrollar un sistema para gestionar unas elecciones utilizando el modelo de votos transferibles. En este modelo, cada papeleta contiene una lista de candidatos ordenados por preferencia. El proceso de recuento se realiza de la siguiente manera:
+
+Primer Recuento: Se contabiliza el primer candidato de cada papeleta.
+Mayoría Absoluta: Si un candidato obtiene la mayoría absoluta de los votos, se declara ganador y el proceso termina.
+Eliminación y Recuento: Si ningún candidato obtiene la mayoría absoluta, se elimina el candidato con el menor número de votos y se realiza un nuevo recuento, considerando la siguiente preferencia en las papeletas de los votantes que eligieron al candidato eliminado.
+Validación de Papeletas: Es necesario comprobar que las papeletas son correctas, es decir, que contienen una lista válida de candidatos ordenados por preferencia.
+Diseño Orientado a Objetos
+
+Clases Candidatas
+
+Clase Candidato:
+Atributos: nombre, votos
+Métodos: incrementarVotos(), resetearVotos()
+Clase Papeleta:
+Atributos: listaPreferencias (lista de objetos Candidato)
+Métodos: obtenerPrimeraPreferencia(), eliminarCandidato(Candidato candidato)
+Clase Eleccion:
+Atributos: candidatos (lista de objetos Candidato), papeletas (lista de objetos Papeleta)
+Métodos: realizarRecuento(), eliminarCandidatoConMenosVotos(), comprobarMayoríaAbsoluta(), validarPapeletas()
+Clase SistemaElecciones:
+Atributos: eleccion (objeto Eleccion)
+Métodos: iniciarEleccion(), mostrarResultados()
+Descripción del Funcionamiento
+
+Inicialización: Se crean los objetos Candidato y Papeleta, y se añaden a la lista correspondiente en el objeto Eleccion.
+Recuento: El método realizarRecuento() de la clase Eleccion contabiliza los votos de acuerdo a la primera preferencia de cada papeleta.
+Comprobación de Mayoría: El método comprobarMayoríaAbsoluta() verifica si algún candidato ha obtenido la mayoría absoluta.
+Eliminación y Nuevo Recuento: Si no hay mayoría absoluta, el método eliminarCandidatoConMenosVotos() elimina al candidato con menos votos y se realiza un nuevo recuento.
+Validación: El método validarPapeletas() asegura que todas las papeletas son correctas antes de iniciar el proceso de recuento.
+Este diseño permite gestionar el proceso de elecciones de manera modular y clara, facilitando la implementación y el mantenimiento del sistema. ¿Te gustaría más detalles sobre alguna de las clases o métodos?
